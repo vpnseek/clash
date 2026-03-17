@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClashHub | Ultimate Proxy Client</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Clash<span class="highlight">Hub</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')" data-i18n="nav_home">Home</a></li>
+            <li><a href="#" onclick="showSection('download')" data-i18n="nav_download">Download</a></li>
+            <li><a href="#" onclick="showSection('tutorial')" data-i18n="nav_tutorial">Tutorial</a></li>
+        </ul>
+        <div class="lang-selector">
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh-CN">简体中文</option>
+                <option value="zh-TW">繁體中文</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="ru">Русский</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </nav>
+
+    <section id="home" class="content-section active">
+        <div class="hero">
+            <div class="hero-text">
+                <h1 data-i18n="hero_title">Next Generation Proxy Tool</h1>
+                <p data-i18n="hero_subtitle">Simple, Powerful, and Open Source. The best way to manage your network traffic securely and efficiently.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showSection('download')" data-i18n="get_started">Get Started</button>
+                    <button class="btn-secondary" onclick="showSection('tutorial')" data-i18n="view_tutorial">View Guide</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="content-section">
+        <div class="section-header">
+            <h2 data-i18n="download_title">Download Clients</h2>
+            <p data-i18n="download_subtitle">Choose the right version for your operating system.</p>
+        </div>
+        <div class="grid download-grid">
+            <div class="card">
+                <div class="card-icon win"><i class="fab fa-windows"></i></div>
+                <h3>Windows</h3>
+                <p class="version">v0.20.39 · 64-bit</p>
+                <a href="#" class="btn-download" data-i18n="btn_dl_win">Download .exe</a>
+                <a href="#" class="link-alt" data-i18n="btn_dl_zip">Portable .zip</a>
+            </div>
+            <div class="card">
+                <div class="card-icon mac"><i class="fab fa-apple"></i></div>
+                <h3>macOS</h3>
+                <p class="version">v1.95.1 · Intel/Apple Silicon</p>
+                <a href="#" class="btn-download" data-i18n="btn_dl_mac">Download .dmg</a>
+            </div>
+            <div class="card">
+                <div class="card-icon and"><i class="fab fa-android"></i></div>
+                <h3>Android</h3>
+                <p class="version">v2.5.12 · Premium</p>
+                <a href="#" class="btn-download" data-i18n="btn_dl_apk">Download .apk</a>
+                <a href="#" class="link-alt" data-i18n="btn_dl_gp">Google Play</a>
+            </div>
+            <div class="card">
+                <div class="card-icon lin"><i class="fab fa-linux"></i></div>
+                <h3>Linux</h3>
+                <p class="version">v1.16.0 · AppImage</p>
+                <a href="#" class="btn-download" data-i18n="btn_dl_lin">Download Core</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tutorial" class="content-section">
+        <div class="section-header">
+            <h2 data-i18n="tutorial_title">How to Use</h2>
+        </div>
+        <div class="tutorial-container">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4 data-i18n="step1_title">Download & Install</h4>
+                    <p data-i18n="step1_desc">Choose your platform and install the client.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4 data-i18n="step2_title">Import Subscription</h4>
+                    <p data-i18n="step2_desc">Copy your API URL and paste it into the Config section.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4 data-i18n="step3_title">Connect</h4>
+                    <p data-i18n="step3_desc">Select a node and turn on the System Proxy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
