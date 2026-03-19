@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClashHub | Ultimate Proxy Client</title>
+    <title>Clash | Ultimate Proxy Client</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 导航栏响应式与小字体优化 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            flex-wrap: wrap;
+            background-color: #fff; /* 确保背景色以防与其他元素重叠 */
+        }
+        .logo {
+            font-size: 1.2rem; /* 减小Logo字体 */
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .nav-links li a {
+            font-size: 0.9rem; /* 减小导航链接字体 */
+            text-decoration: none;
+            color: #333;
+        }
+        .lang-selector select {
+            font-size: 0.85rem; /* 减小语言选择器字体 */
+            padding: 3px;
+            border-radius: 4px;
+        }
+        
+        /* 移动端自适应 */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 10px;
+            }
+            .nav-links {
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
         /* 针对 Tutorial 区域的独立样式，避免污染全局 */
         .guide-container { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
@@ -65,7 +111,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Clash<span class="highlight">Hub</span></div>
+        <div class="logo">Clash</div>
         <ul class="nav-links">
             <li><a href="#" onclick="showSection('home')" data-i18n="nav_home">Home</a></li>
             <li><a href="#" onclick="showSection('download')" data-i18n="nav_download">Download</a></li>
@@ -73,14 +119,14 @@
         </ul>
         <div class="lang-selector">
             <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="zh-CN">简体中文</option>
-                <option value="zh-TW">繁體中文</option>
-                <option value="ja">日本語</option>
-                <option value="ko">한국어</option>
-                <option value="ru">Русский</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
+                <option value="en">EN</option>
+                <option value="zh-CN">ZH-CN</option>
+                <option value="zh-TW">ZH-TW</option>
+                <option value="ja">JA</option>
+                <option value="ko">KO</option>
+                <option value="ru">RU</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
             </select>
         </div>
     </nav>
