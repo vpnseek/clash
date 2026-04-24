@@ -1,254 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clash | Ultimate Proxy Client</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* 导航栏响应式与小字体优化 */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%;
-            flex-wrap: wrap;
-            background-color: #fff; /* 确保背景色以防与其他元素重叠 */
-        }
-        .logo {
-            font-size: 1.2rem; /* 减小Logo字体 */
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        .nav-links li a {
-            font-size: 0.9rem; /* 减小导航链接字体 */
-            text-decoration: none;
-            color: #333;
-        }
-        .lang-selector select {
-            font-size: 0.85rem; /* 减小语言选择器字体 */
-            padding: 3px;
-            border-radius: 4px;
-        }
-        
-        /* 移动端自适应 */
-        @media (max-width: 600px) {
-            .navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 15px 10px;
-            }
-            .nav-links {
-                gap: 15px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-        }
+    <title>AnyTLS Download | Best Free Clients for Mihomo & sing-box</title>
+    <meta name="title" content="AnyTLS Download | Best Free Clients for Mihomo & sing-box">
+    <meta name="description" content="Download the best free and open-source AnyTLS clients. Complete directory of AnyTLS supported proxy apps for Windows, Mac, Linux, Android, iOS, and Routers.">
+    <meta name="keywords" content="AnyTLS download, AnyTLS client, Mihomo client, sing-box client, Clash AnyTLS, AnyTLS proxy, free AnyTLS apps, OpenClash AnyTLS">
+    <meta name="author" content="AnyTLS Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://anytls.download/">
 
-        /* 针对 Tutorial 区域的独立样式，避免污染全局 */
-        .guide-container { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
-        .guide-container h1 { 
-            color: #2c3e50; 
-            text-align: center; 
-            border-bottom: 2px solid #3498db; 
-            padding-bottom: 10px; 
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-        .guide-container h2 { 
-            color: #2980b9; 
-            margin-top: 20px; 
-            border-left: 5px solid #3498db; 
-            padding-left: 10px; 
-            font-size: 1.5em;
-        }
-        .guide-container .platform-box { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-            margin-bottom: 20px; 
-            text-align: left;
-        }
-        .guide-container code { 
-            background: #f0f0f0; 
-            padding: 2px 5px; 
-            border-radius: 4px; 
-            font-family: monospace; 
-        }
-        .guide-container .guide-step { 
-            margin-bottom: 10px; 
-        }
-        .guide-container .important { 
-            color: #e74c3c; 
-            font-weight: bold; 
-            text-align: center;
-            margin-top: 30px;
-        }
-        .guide-container .guide-footer { 
-            text-align: center; 
-            font-size: 0.9em; 
-            color: #7f8c8d; 
-            margin-top: 50px; 
-        }
-    </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anytls.download/">
+    <meta property="og:title" content="AnyTLS Download | Best Free Clients">
+    <meta property="og:description" content="Discover and download the best open-source clients supporting the AnyTLS protocol across all platforms.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class="navbar">
-        <div class="logo">Clash</div>
-        <ul class="nav-links">
-            <li><a href="#" onclick="showSection('home')" data-i18n="nav_home">Home</a></li>
-            <li><a href="#" onclick="showSection('download')" data-i18n="nav_download">Download</a></li>
-            <li><a href="#" onclick="showSection('tutorial')" data-i18n="nav_tutorial">Tutorial</a></li>
-        </ul>
-        <div class="lang-selector">
-            <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en">EN</option>
-                <option value="zh-CN">ZH-CN</option>
-                <option value="zh-TW">ZH-TW</option>
-                <option value="ja">JA</option>
-                <option value="ko">KO</option>
-                <option value="ru">RU</option>
-                <option value="es">ES</option>
-                <option value="fr">FR</option>
-            </select>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>anytls.download</span>
+            </div>
+            <div class="lang-selector">
+                <i class="fa-solid fa-globe"></i>
+                <select id="langSwitch" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="zh">简体中文</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <section id="home" class="content-section active">
-        <div class="hero">
-            <div class="hero-text">
-                <h1 data-i18n="hero_title">Next Generation Proxy Tool</h1>
-                <p data-i18n="hero_subtitle">Simple, Powerful, and Open Source. The best way to manage your network traffic securely and efficiently.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="showSection('download')" data-i18n="get_started">Get Started</button>
-                    <button class="btn-secondary" onclick="showSection('tutorial')" data-i18n="view_tutorial">View Guide</button>
-                </div>
+    <header class="hero container">
+        <h1 id="i18n-title">AnyTLS Download Hub</h1>
+        <p id="i18n-desc">Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps for Mihomo and sing-box cores across Windows, macOS, Android, and Routers.</p>
+    </header>
+
+    <main class="container">
+        <div class="client-grid" id="clientGrid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 anytls.download. Open Source & Security First.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#"><i class="fa-solid fa-shield-cat"></i> Mihomo Core</a>
+                <a href="#"><i class="fa-solid fa-box-open"></i> sing-box</a>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section id="download" class="content-section">
-        <div class="section-header">
-            <h2 data-i18n="download_title">Download Clients</h2>
-            <p data-i18n="download_subtitle">Choose the right version for your operating system.</p>
-        </div>
-        <div class="grid download-grid">
-            <div class="card">
-                <div class="card-icon win"><i class="fab fa-windows"></i></div>
-                <h3>Windows</h3>
-                <p class="version">v0.20.39 · 64-bit</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_win">Download .exe</a>
-                <a href="#" class="link-alt" data-i18n="btn_dl_zip">Portable .zip</a>
-            </div>
-            <div class="card">
-                <div class="card-icon mac"><i class="fab fa-apple"></i></div>
-                <h3>macOS</h3>
-                <p class="version">v1.95.1 · Intel/Apple Silicon</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_mac">Download .dmg</a>
-            </div>
-            <div class="card">
-                <div class="card-icon and"><i class="fab fa-android"></i></div>
-                <h3>Android</h3>
-                <p class="version">v2.5.12 · Premium</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_apk">Download .apk</a>
-                <a href="#" class="link-alt" data-i18n="btn_dl_gp">Google Play</a>
-            </div>
-            <div class="card">
-                <div class="card-icon lin"><i class="fab fa-linux"></i></div>
-                <h3>Linux</h3>
-                <p class="version">v1.16.0 · AppImage</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_lin">Download Core</a>
-            </div>
-            <div class="card">
-                <div class="card-icon ios" style="color: #000;"><i class="fab fa-apple"></i></div>
-                <h3>iOS</h3>
-                <p class="version">Stash / Shadowrocket</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_ios">App Store</a>
-                <a href="#" class="link-alt" data-i18n="btn_dl_ios_tut">Setup Guide</a>
-            </div>
-            <div class="card">
-                <div class="card-icon router" style="color: #2c3e50;"><i class="fas fa-route"></i></div>
-                <h3>Router</h3>
-                <p class="version">v0.45.144 · OpenWrt</p>
-                <a href="#" class="btn-download" data-i18n="btn_dl_router">Download Plugin</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tutorial" class="content-section">
-        <div class="guide-container">
-            <h1>The Definitive Clash Setup Guide</h1>
-            <p style="text-align: center; margin-bottom: 30px;">Whether you're looking to bypass geo-restrictions or just secure your workflow, this guide covers the "how-to" for importing your Clash subscription across all your major devices.</p>
-
-            <div class="platform-box">
-                <h2>💻 Windows (Clash for Windows)</h2>
-                <div class="guide-step"><strong>1. Copy Link:</strong> Grab your <code>clash://</code> or HTTP subscription URL from your provider.</div>
-                <div class="guide-step"><strong>2. Profiles:</strong> Open the app and click the <strong>Profiles</strong> tab on the left sidebar.</div>
-                <div class="guide-step"><strong>3. Import:</strong> Paste your URL into the top bar and hit <strong>Download</strong>. If successful, you’ll see a new green profile card.</div>
-                <div class="guide-step"><strong>4. Activate:</strong> Click the card to select it, then go to <strong>General</strong> and toggle on <strong>System Proxy</strong>.</div>
-            </div>
-
-            <div class="platform-box">
-                <h2>🍎 macOS (ClashX / Clash Pro)</h2>
-                <div class="guide-step"><strong>1. Config:</strong> Click the Clash icon in your Menu Bar (top right).</div>
-                <div class="guide-step"><strong>2. Subscription:</strong> Navigate to <code>Config</code> > <code>Remote Config</code> > <code>Manage</code>.</div>
-                <div class="guide-step"><strong>3. Add:</strong> Click <strong>Add</strong>, paste your URL, and give it a name (e.g., "Main Sub").</div>
-                <div class="guide-step"><strong>4. Switch:</strong> Under the Menu Bar icon, select <strong>Proxy Mode</strong> (Rule is recommended) and ensure <strong>Set as System Proxy</strong> is checked.</div>
-            </div>
-
-            <div class="platform-box">
-                <h2>📱 Android (Clash for Android)</h2>
-                <div class="guide-step"><strong>1. Profile:</strong> Tap <strong>Profiles</strong> on the main dashboard.</div>
-                <div class="guide-step"><strong>2. New Profile:</strong> Tap the <strong>+</strong> icon and select <strong>URL</strong>.</div>
-                <div class="guide-step"><strong>3. Details:</strong> Paste your URL in the "URL" field and save. Click the "Download" icon next to the new profile.</div>
-                <div class="guide-step"><strong>4. Start:</strong> Return to the home screen and tap the large <strong>Stopped</strong> button to toggle it to <strong>Running</strong>.</div>
-            </div>
-
-            <div class="platform-box">
-                <h2>🍏 iOS (Stash / Shadowrocket)</h2>
-                <p style="margin-bottom: 10px; color: #666; font-size: 0.9em;"><em>Note: Clash Verge/Core isn't natively on iOS; Stash is the most popular Clash-compatible client.</em></p>
-                <div class="guide-step"><strong>1. Download:</strong> Open Stash and go to the <strong>Settings</strong> tab.</div>
-                <div class="guide-step"><strong>2. Config:</strong> Tap <strong>Config File</strong> > <strong>Download Config from URL</strong>.</div>
-                <div class="guide-step"><strong>3. Paste:</strong> Enter your subscription link and tap <strong>Download</strong>.</div>
-                <div class="guide-step"><strong>4. Connect:</strong> Go to the home tab and toggle the switch. Allow the iOS VPN permission pop-up.</div>
-            </div>
-
-            <div class="platform-box">
-                <h2>🌐 Router (OpenWrt / OpenClash)</h2>
-                <div class="guide-step"><strong>1. Access:</strong> Log into your router’s WebUI (usually <code>192.168.1.1</code>).</div>
-                <div class="guide-step"><strong>2. Plugin:</strong> Go to <strong>Services</strong> > <strong>OpenClash</strong>.</div>
-                <div class="guide-step"><strong>3. Config Update:</strong> Find <strong>Config Update</strong> or <strong>Config Subscription</strong> in the side menu.</div>
-                <div class="guide-step"><strong>4. Add:</strong> Paste your link into the subscription list, save, and hit <strong>Update Config</strong>.</div>
-                <div class="guide-step"><strong>5. Enable:</strong> Go back to the OverView page and click <strong>Enable OpenClash</strong>.</div>
-            </div>
-
-            <div class="important">
-                ⚠️ Pro-tip: Always use "Rule" mode to keep your local traffic fast while proxying only what's necessary!
-            </div>
-
-            <div class="guide-footer">
-                Generated for cross-platform utility. Stay connected.
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
