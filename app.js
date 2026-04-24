@@ -345,9 +345,9 @@ function updateThemeIcon(theme) {
 
 // Init
 langSwitch.addEventListener('change', (e) => renderApp(e.target.value));
-const browserLang = navigator.language.slice(0, 2);
-const initLang = i18n[browserLang] ? browserLang : 'en';
+const initLang = 'en'; // 强制把初始语言锁定为 'en'
 langSwitch.value = initLang;
 
+// 启动渲染和主题
 renderApp(initLang);
 initTheme();
