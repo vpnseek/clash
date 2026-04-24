@@ -114,7 +114,9 @@ const i18n = {
     }
 };
 
-// --- 2. Client Database (SEO Optimized Descriptions) ---
+const getI18n = (lang) => i18n[lang] || i18n['en'];
+
+// --- 2. Client Database ---
 const clients = [
     {
         name: "Clash Verge Rev",
@@ -197,6 +199,16 @@ const clients = [
         ]
     },
     {
+        name: "NekoBox for Android",
+        categoryKey: "catMobile",
+        icon: "fa-solid fa-box-open",
+        desc: "Versatile proxy toolchain for Android. Supports sing-box core with complete AnyTLS configuration capabilities.",
+        links: [
+            { key: "btnPlayStore", icon: "fa-brands fa-google-play", url: "https://github.com/Matsuridayo/NekoBoxForAndroid/releases", primary: true },
+            { key: "btnGithub", icon: "fa-brands fa-github", url: "https://github.com/Matsuridayo/NekoBoxForAndroid" }
+        ]
+    },
+    {
         name: "sing-box",
         categoryKey: "catMobile",
         icon: "fa-solid fa-cube",
@@ -208,29 +220,29 @@ const clients = [
     }
 ];
 
-// --- 3. Rendering Engine & SEO Injector ---
+// --- 3. Rendering Engine & Theme Logic ---
 const langSwitch = document.getElementById('langSwitch');
 const clientGrid = document.getElementById('clientGrid');
 const titleEl = document.getElementById('i18n-title');
 const descEl = document.getElementById('i18n-desc');
+const themeToggleBtn = document.getElementById('themeToggle');
 
+// Render Function
 function renderApp(lang) {
-    const t = i18n[lang] || i18n['en'];
+    const t = getI18n(lang);
     
-    // 1. Update HTML Attributes
+    // SEO & Document Update
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
-
-    // 2. Update SEO Meta Tags Dynamically
     document.title = t.pageTitle;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", t.pageMetaDesc);
 
-    // 3. Update DOM Content
+    // Content Update
     titleEl.textContent = t.title;
     descEl.textContent = t.desc;
 
-    // 4. Render Grid
+    // Grid Injection
     clientGrid.innerHTML = clients.map(client => `
         <div class="card">
             <div class="card-header">
@@ -252,13 +264,38 @@ function renderApp(lang) {
     `).join('');
 }
 
-// Event Listener for Language Change
-langSwitch.addEventListener('change', (e) => {
-    renderApp(e.target.value);
-});
+// Theme Management
+function initTheme() {
+    const savedTheme = localStorage.getItem('anytls-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
 
-// Initial Render (detect browser lang or default to EN)
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('anytls-theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+function updateThemeIcon(theme) {
+    const icon = themeToggleBtn.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fa-solid fa-sun'; // Show sun in dark mode
+    } else {
+        icon.className = 'fa-solid fa-moon'; // Show moon in light mode
+    }
+}
+
+// Initialization & Event Listeners
+langSwitch.addEventListener('change', (e) => renderApp(e.target.value));
+
 const browserLang = navigator.language.slice(0, 2);
 const initLang = i18n[browserLang] ? browserLang : 'en';
 langSwitch.value = initLang;
+
+// Bootstrap
 renderApp(initLang);
+initTheme();
