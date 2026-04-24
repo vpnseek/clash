@@ -19,10 +19,17 @@
 
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>AnyTLS Download</span>
+            <div class="logo-group">
+                <div class="logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>AnyTLS Download</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#" id="tab-download" class="nav-tab active">Download</a>
+                    <a href="#" id="tab-tutorial" class="nav-tab">Tutorial</a>
+                </div>
             </div>
+            
             <div class="nav-controls">
                 <div class="lang-selector">
                     <i class="fa-solid fa-globe"></i>
@@ -52,6 +59,15 @@
     <main class="container">
         <div class="client-grid" id="clientGrid">
             </div>
+
+        <div class="tutorial-section" id="tutorialSection" style="display: none;">
+            <div class="tutorial-header">
+                <i class="fa-solid fa-book-open"></i>
+                <h2 id="i18n-tut-title">Quick Start Guide</h2>
+            </div>
+            <div id="i18n-tut-content" class="tutorial-content">
+                </div>
+        </div>
     </main>
 
     <footer>
