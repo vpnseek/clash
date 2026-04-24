@@ -1,10 +1,11 @@
-// --- 1. Internationalization (i18n) Data & SEO ---
 const i18n = {
     en: {
         pageTitle: "AnyTLS Download | Best Free Clients for Mihomo & sing-box",
-        pageMetaDesc: "Download the best free and open-source AnyTLS clients. Complete directory of AnyTLS supported proxy apps for Windows, Mac, Linux, Android, iOS, and Routers.",
+        pageMetaDesc: "Download the best free AnyTLS clients. Guide to AnyTLS proxy apps for Windows, Mac, Linux, Android, iOS, and Routers.",
         title: "AnyTLS Download Hub",
         desc: "Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps for Mihomo and sing-box cores across Windows, macOS, Android, and Routers.",
+        tabDownload: "Download",
+        tabTutorial: "Tutorial",
         catDesktop: "Desktop Proxy",
         catMobile: "Mobile Client",
         catRouter: "Router & CLI",
@@ -12,13 +13,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "Quick Start Guide",
+        tutContent: "<p>1. Copy your AnyTLS subscription link from your proxy provider.</p><p>2. Open your downloaded client (e.g., Clash Verge Rev).</p><p>3. Go to <b>Profiles</b> > <b>New</b> > <b>URL</b> and paste the link.</p><p>4. <b>Important:</b> Ensure your Mihomo core is updated to <code>v1.18.0</code> or higher, otherwise you will encounter an <code>unknown proxy type</code> error.</p>"
     },
     zh: {
         pageTitle: "AnyTLS 下载 | 支持 Mihomo 与 sing-box 的免费客户端大全",
-        pageMetaDesc: "AnyTLS 客户端最新下载地址聚合。提供支持 AnyTLS 协议的免费开源代理软件，涵盖 Windows, Mac, Android, iOS 及 OpenWrt 路由器。",
+        pageMetaDesc: "AnyTLS 客户端最新下载地址与配置教程聚合。涵盖 Windows, Mac, Android, iOS 及 OpenWrt 路由器。",
         title: "AnyTLS 客户端下载聚合",
         desc: "为您精选全平台支持 AnyTLS 代理协议的免费与开源客户端。基于 Mihomo 和 sing-box 内核，提供更安全、高效的网络体验。",
+        tabDownload: "客户端下载",
+        tabTutorial: "使用教程",
         catDesktop: "桌面端代理",
         catMobile: "移动端代理",
         catRouter: "路由器与命令行",
@@ -26,13 +31,17 @@ const i18n = {
         btnGithub: "开源仓库",
         btnWiki: "使用文档",
         btnAppStore: "苹果商店",
-        btnPlayStore: "谷歌商店"
+        btnPlayStore: "谷歌商店",
+        tutTitle: "AnyTLS 快速上手指南",
+        tutContent: "<p>1. 从您的服务商处复制包含 AnyTLS 节点的订阅链接。</p><p>2. 打开下载好的客户端（推荐使用 Clash Verge Rev 或 NekoBox）。</p><p>3. 进入 <b>配置 (Profiles)</b> > <b>新建 (New)</b> > <b>导入 URL</b> 并粘贴链接保存。</p><p>4. <b>注意事项：</b>请确保您的 Mihomo 内核版本在 <code>v1.18.0</code> 以上，否则会报错 <code>unknown proxy type: anytls</code>。</p>"
     },
     es: {
-        pageTitle: "Descargar AnyTLS | Mejores Clientes Gratuitos para Mihomo y sing-box",
-        pageMetaDesc: "Descarga los mejores clientes AnyTLS gratuitos y de código abierto para Windows, Mac, Linux, Android, iOS y Routers.",
+        pageTitle: "Descargar AnyTLS | Mejores Clientes Gratuitos",
+        pageMetaDesc: "Descarga los mejores clientes AnyTLS gratuitos y guía de configuración.",
         title: "Hub de Descargas AnyTLS",
         desc: "Descargue los mejores clientes gratuitos y de código abierto compatibles con el protocolo proxy AnyTLS para todos sus dispositivos.",
+        tabDownload: "Descargar",
+        tabTutorial: "Tutorial",
         catDesktop: "Proxy Escritorio",
         catMobile: "Cliente Móvil",
         catRouter: "Router y CLI",
@@ -40,13 +49,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "Guía de Inicio Rápido",
+        tutContent: "<p>1. Copie su enlace de suscripción AnyTLS de su proveedor.</p><p>2. Abra el cliente descargado.</p><p>3. Vaya a <b>Perfiles</b> > <b>Nuevo</b> > <b>URL</b> y pegue el enlace.</p><p>4. Asegúrese de que su núcleo Mihomo esté actualizado a <code>v1.18.0</code> o superior.</p>"
     },
     fr: {
-        pageTitle: "Télécharger AnyTLS | Meilleurs Clients Gratuits pour Mihomo & sing-box",
-        pageMetaDesc: "Téléchargez les meilleurs clients AnyTLS gratuits et open-source pour Windows, Mac, Linux, Android, iOS et Routeurs.",
+        pageTitle: "Télécharger AnyTLS | Meilleurs Clients Gratuits",
+        pageMetaDesc: "Téléchargez les meilleurs clients AnyTLS gratuits et guide de configuration.",
         title: "Hub de Téléchargement AnyTLS",
         desc: "Téléchargez les meilleurs clients gratuits et open-source prenant en charge le protocole proxy AnyTLS pour tous vos appareils.",
+        tabDownload: "Télécharger",
+        tabTutorial: "Tutoriel",
         catDesktop: "Proxy Bureau",
         catMobile: "Client Mobile",
         catRouter: "Routeur & CLI",
@@ -54,13 +67,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "Guide de Démarrage",
+        tutContent: "<p>1. Copiez votre lien d'abonnement AnyTLS.</p><p>2. Ouvrez le client téléchargé.</p><p>3. Allez dans <b>Profils</b> > <b>Nouveau</b> > <b>URL</b> et collez le lien.</p><p>4. Assurez-vous que votre noyau Mihomo est mis à jour vers <code>v1.18.0</code> ou plus.</p>"
     },
     de: {
-        pageTitle: "AnyTLS Download | Beste kostenlose Clients für Mihomo & sing-box",
-        pageMetaDesc: "Laden Sie die besten kostenlosen AnyTLS-Clients für Windows, Mac, Linux, Android, iOS und Router herunter.",
+        pageTitle: "AnyTLS Download | Beste kostenlose Clients",
+        pageMetaDesc: "Laden Sie die besten kostenlosen AnyTLS-Clients herunter.",
         title: "AnyTLS Download-Hub",
         desc: "Laden Sie die besten kostenlosen und Open-Source-Clients herunter, die das AnyTLS-Proxy-Protokoll unterstützen.",
+        tabDownload: "Download",
+        tabTutorial: "Anleitung",
         catDesktop: "Desktop-Proxy",
         catMobile: "Mobiler Client",
         catRouter: "Router & CLI",
@@ -68,13 +85,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "Kurzanleitung",
+        tutContent: "<p>1. Kopieren Sie Ihren AnyTLS-Abonnementlink.</p><p>2. Öffnen Sie den heruntergeladenen Client.</p><p>3. Gehen Sie zu <b>Profile</b> > <b>Neu</b> > <b>URL</b> und fügen Sie den Link ein.</p><p>4. Stellen Sie sicher, dass Ihr Mihomo-Kern auf <code>v1.18.0</code> aktualisiert ist.</p>"
     },
     ja: {
-        pageTitle: "AnyTLS ダウンロード | Mihomoとsing-boxに最適な無料クライアント",
-        pageMetaDesc: "Windows、Mac、Linux、Android、iOS、ルーター向けの最高の無料かつオープンソースのAnyTLSクライアントをダウンロード。",
+        pageTitle: "AnyTLS ダウンロード | 最適な無料クライアント",
+        pageMetaDesc: "最高の無料かつオープンソースのAnyTLSクライアントをダウンロード。",
         title: "AnyTLS ダウンロードハブ",
         desc: "AnyTLSプロキシプロトコルをサポートする、最高かつ安全な無料のオープンソースクライアントをダウンロードしてください。",
+        tabDownload: "ダウンロード",
+        tabTutorial: "チュートリアル",
         catDesktop: "デスクトップ",
         catMobile: "モバイル",
         catRouter: "ルーター",
@@ -82,13 +103,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "クイックスタートガイド",
+        tutContent: "<p>1. プロバイダーからAnyTLSサブスクリプションリンクをコピーします。</p><p>2. ダウンロードしたクライアントを開きます。</p><p>3. <b>プロファイル</b> > <b>新規</b> > <b>URL</b> に進み、リンクを貼り付けます。</p><p>4. Mihomoコアが <code>v1.18.0</code> 以上に更新されていることを確認してください。</p>"
     },
     ru: {
-        pageTitle: "Скачать AnyTLS | Лучшие бесплатные клиенты для Mihomo и sing-box",
-        pageMetaDesc: "Скачайте лучшие бесплатные клиенты AnyTLS с открытым исходным кодом для Windows, Mac, Linux, Android, iOS и роутеров.",
+        pageTitle: "Скачать AnyTLS | Лучшие бесплатные клиенты",
+        pageMetaDesc: "Скачайте лучшие бесплатные клиенты AnyTLS с открытым исходным кодом.",
         title: "Центр загрузок AnyTLS",
         desc: "Скачайте лучшие бесплатные клиенты с открытым исходным кодом, поддерживающие прокси-протокол AnyTLS для всех ваших устройств.",
+        tabDownload: "Скачать",
+        tabTutorial: "Руководство",
         catDesktop: "Десктоп Прокси",
         catMobile: "Мобильный Клиент",
         catRouter: "Роутер и CLI",
@@ -96,13 +121,17 @@ const i18n = {
         btnGithub: "GitHub",
         btnWiki: "Wiki",
         btnAppStore: "App Store",
-        btnPlayStore: "Google Play"
+        btnPlayStore: "Google Play",
+        tutTitle: "Краткое руководство",
+        tutContent: "<p>1. Скопируйте ссылку на подписку AnyTLS.</p><p>2. Откройте скачанный клиент.</p><p>3. Перейдите в <b>Профили</b> > <b>Новый</b> > <b>URL</b> и вставьте ссылку.</p><p>4. Убедитесь, что ядро Mihomo обновлено до версии <code>v1.18.0</code> или выше.</p>"
     },
     ar: {
-        pageTitle: "تنزيل AnyTLS | أفضل العملاء المجانيين لـ Mihomo و sing-box",
-        pageMetaDesc: "قم بتنزيل أفضل عملاء AnyTLS المجانيين ومفتوحي المصدر لأنظمة Windows و Mac و Linux و Android و iOS وأجهزة التوجيه.",
+        pageTitle: "تنزيل AnyTLS | أفضل العملاء المجانيين",
+        pageMetaDesc: "قم بتنزيل أفضل عملاء AnyTLS المجانيين ومفتوحي المصدر.",
         title: "مركز تنزيل AnyTLS",
         desc: "قم بتنزيل أفضل العملاء المجانيين ومفتوحي المصدر الذين يدعمون بروتوكول وكيل AnyTLS لجميع أجهزتك.",
+        tabDownload: "تنزيل",
+        tabTutorial: "شرح الاستخدام",
         catDesktop: "وكيل سطح المكتب",
         catMobile: "عميل الهاتف",
         catRouter: "راوتر و CLI",
@@ -110,13 +139,14 @@ const i18n = {
         btnGithub: "جيت هاب",
         btnWiki: "ويكي",
         btnAppStore: "متجر التطبيقات",
-        btnPlayStore: "جوجل بلاي"
+        btnPlayStore: "جوجل بلاي",
+        tutTitle: "دليل البدء السريع",
+        tutContent: "<p>1. انسخ رابط اشتراك AnyTLS الخاص بك.</p><p>2. افتح العميل الذي تم تنزيله.</p><p>3. انتقل إلى <b>الملفات الشخصية</b> > <b>جديد</b> > <b>رابط URL</b> والصق الرابط.</p><p>4. تأكد من تحديث نواة Mihomo إلى <code>v1.18.0</code> أو أعلى.</p>"
     }
 };
 
 const getI18n = (lang) => i18n[lang] || i18n['en'];
 
-// --- 2. Client Database ---
 const clients = [
     {
         name: "Clash Verge Rev",
@@ -220,29 +250,36 @@ const clients = [
     }
 ];
 
-// --- 3. Rendering Engine & Theme Logic ---
+// Elements
 const langSwitch = document.getElementById('langSwitch');
 const clientGrid = document.getElementById('clientGrid');
+const tutorialSection = document.getElementById('tutorialSection');
 const titleEl = document.getElementById('i18n-title');
 const descEl = document.getElementById('i18n-desc');
 const themeToggleBtn = document.getElementById('themeToggle');
+const tabDownload = document.getElementById('tab-download');
+const tabTutorial = document.getElementById('tab-tutorial');
+const tutTitleEl = document.getElementById('i18n-tut-title');
+const tutContentEl = document.getElementById('i18n-tut-content');
 
-// Render Function
+// Render Content
 function renderApp(lang) {
     const t = getI18n(lang);
     
-    // SEO & Document Update
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
     document.title = t.pageTitle;
+    
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", t.pageMetaDesc);
 
-    // Content Update
     titleEl.textContent = t.title;
     descEl.textContent = t.desc;
+    tabDownload.textContent = t.tabDownload;
+    tabTutorial.textContent = t.tabTutorial;
+    tutTitleEl.textContent = t.tutTitle;
+    tutContentEl.innerHTML = t.tutContent;
 
-    // Grid Injection
     clientGrid.innerHTML = clients.map(client => `
         <div class="card">
             <div class="card-header">
@@ -264,7 +301,24 @@ function renderApp(lang) {
     `).join('');
 }
 
-// Theme Management
+// Tab Switching
+tabDownload.addEventListener('click', (e) => {
+    e.preventDefault();
+    clientGrid.style.display = 'grid';
+    tutorialSection.style.display = 'none';
+    tabDownload.classList.add('active');
+    tabTutorial.classList.remove('active');
+});
+
+tabTutorial.addEventListener('click', (e) => {
+    e.preventDefault();
+    clientGrid.style.display = 'none';
+    tutorialSection.style.display = 'block';
+    tabTutorial.classList.add('active');
+    tabDownload.classList.remove('active');
+});
+
+// Theme Logic
 function initTheme() {
     const savedTheme = localStorage.getItem('anytls-theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -283,19 +337,17 @@ function initTheme() {
 function updateThemeIcon(theme) {
     const icon = themeToggleBtn.querySelector('i');
     if (theme === 'dark') {
-        icon.className = 'fa-solid fa-sun'; // Show sun in dark mode
+        icon.className = 'fa-solid fa-sun';
     } else {
-        icon.className = 'fa-solid fa-moon'; // Show moon in light mode
+        icon.className = 'fa-solid fa-moon';
     }
 }
 
-// Initialization & Event Listeners
+// Init
 langSwitch.addEventListener('change', (e) => renderApp(e.target.value));
-
 const browserLang = navigator.language.slice(0, 2);
 const initLang = i18n[browserLang] ? browserLang : 'en';
 langSwitch.value = initLang;
 
-// Bootstrap
 renderApp(initLang);
 initTheme();
