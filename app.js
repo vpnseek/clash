@@ -1,112 +1,106 @@
 const i18n = {
     en: {
-        // ... 原有 key ...
-        tabAbout: "About",
+        // ...原有词条...
         tabInstall: "Install",
-        aboutTitle: "The Next Generation Protocol",
-        installTitle: "Server Side Installation",
+        tabAbout: "About",
+        installTitle: "Server Deployment",
+        aboutTitle: "About AnyTLS Protocol",
         copy: "Copy",
         copied: "Copied!",
-        aboutFeatures: [
-            { t: "Ultimate Performance", d: "Zero RTT handshake based on TLS 1.3, reducing latency significantly." },
-            { t: "Perfect Camouflage", d: "Indistinguishable from normal HTTPS traffic to bypass deep packet inspection." },
-            { t: "Native Support", d: "Seamlessly integrated into Mihomo and sing-box cores." }
-        ],
-        installGuides: [
-            { title: "AnyTLS Standalone (Official)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/AnyTLS/painless/main/install.sh)" },
-            { title: "3X-UI (Recommended)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/mxtp/x-ui/master/install.sh)" },
-            { title: "V2bx (Xboard Backend)", cmd: "wget -N https://raw.githubusercontent.com/Wyatt-Luu/V2bX/master/install.sh && bash install.sh" }
+        aboutContent: `
+            <div class="about-grid">
+                <div class="about-item"><i class="fa-solid fa-shield-halved"></i><h3>Strong Encryption</h3><p>Built on top of TLS 1.3, providing perfect forward secrecy and resistance against active probing.</p></div>
+                <div class="about-item"><i class="fa-solid fa-gauge-high"></i><h3>High Performance</h3><p>Optimized for low-latency and high-throughput environments, significantly faster than traditional wrappers.</p></div>
+                <div class="about-item"><i class="fa-solid fa-mask"></i><h3>Invisible Footprint</h3><p>Simulates normal HTTPS traffic to bypass deep packet inspection (DPI) in restricted networks.</p></div>
+            </div>`,
+        installList: [
+            { title: "AnyTLS Standalone (Official)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/anytls/release/main/install.sh)" },
+            { title: "X-UI (Support AnyTLS)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)" },
+            { title: "V2bX (Xboard Backend)", cmd: "wget -N https://raw.githubusercontent.com/Wyatt-7/V2bX/master/install.sh && bash install.sh" }
         ]
     },
     zh: {
-        // ... 原有 key ...
+        // ...原有词条...
         tabDownload: "下载",
-        tabAbout: "关于协议",
-        tabInstall: "服务端安装",
-        tabTutorial: "教程",
-        aboutTitle: "为什么选择 AnyTLS？",
+        tabInstall: "安装",
+        tabAbout: "关于",
         installTitle: "服务端部署脚本",
+        aboutTitle: "关于 AnyTLS 协议",
         copy: "复制",
         copied: "已复制",
-        aboutFeatures: [
-            { t: "极致性能", d: "基于 TLS 1.3 的 0-RTT 握手，显著降低首包延迟。" },
-            { t: "完美伪装", d: "流量特征与标准 HTTPS 完全一致，有效对抗 DPI 深度检测。" },
-            { t: "原生支持", d: "已完美集成至 Mihomo (原 Clash Meta) 与 sing-box 内核。" }
-        ],
-        installGuides: [
-            { title: "AnyTLS 官方独立安装", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/AnyTLS/painless/main/install.sh)" },
-            { title: "3X-UI 面板安装 (支持图形化管理)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/mxtp/x-ui/master/install.sh)" },
-            { title: "V2bx 后端安装 (适配 Xboard/V2board)", cmd: "wget -N https://raw.githubusercontent.com/Wyatt-Luu/V2bX/master/install.sh && bash install.sh" }
+        aboutContent: `
+            <div class="about-grid">
+                <div class="about-item"><i class="fa-solid fa-shield-halved"></i><h3>极致加密</h3><p>基于 TLS 1.3 协议，提供前向保密性，有效防止中间人攻击与主动探测。</p></div>
+                <div class="about-item"><i class="fa-solid fa-gauge-high"></i><h3>高性能架构</h3><p>针对高吞吐量环境优化，降低握手延迟，相较于传统协议性能提升显著。</p></div>
+                <div class="about-item"><i class="fa-solid fa-mask"></i><h3>隐匿伪装</h3><p>完美模拟 HTTPS 流量，轻松绕过严格网络环境下的深度包检测 (DPI)。</p></div>
+            </div>`,
+        installList: [
+            { title: "AnyTLS 独立脚本 (官方)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/anytls/release/main/install.sh)" },
+            { title: "X-UI 脚本 (已集成 AnyTLS)", cmd: "bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)" },
+            { title: "V2bX 脚本 (支持 Xboard 后端)", cmd: "wget -N https://raw.githubusercontent.com/Wyatt-7/V2bX/master/install.sh && bash install.sh" }
         ]
     }
-    // 其他语言建议按此结构补充...
+    // 其他语言(es, fr, de, ja, ru, ar) 建议以此模板类推填充...
 };
 
-// ... 其他原有变量 ...
-const sections = {
-    'tab-download': 'downloadSection',
-    'tab-about': 'aboutSection',
-    'tab-install': 'installSection',
-    'tab-tutorial': 'tutorialSection'
-};
+// 工具函数：复制到剪贴板
+async function copyToClipboard(text, btn) {
+    try {
+        await navigator.clipboard.writeText(text);
+        const originalText = btn.textContent;
+        btn.textContent = getI18n(langSwitch.value).copied;
+        setTimeout(() => { btn.textContent = originalText; }, 2000);
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+    }
+}
 
+// 渲染函数更新
 function renderApp(lang) {
     const t = getI18n(lang);
-    // ... 原有基础渲染逻辑 ...
-
-    // 渲染 About 页面内容
-    const aboutContent = document.getElementById('i18n-about-content');
-    aboutContent.innerHTML = t.aboutFeatures.map(f => `
-        <div class="about-card">
-            <h4 style="color:var(--accent-color);margin-bottom:0.5rem">${f.t}</h4>
-            <p style="font-size:0.9rem;color:var(--text-secondary)">${f.d}</p>
-        </div>
-    `).join('');
-
-    // 渲染 Install 页面内容 (含代码高亮和复制)
-    const installContent = document.getElementById('i18n-install-content');
-    installContent.innerHTML = t.installGuides.map(g => `
-        <div class="install-item">
-            <h3 style="font-size:1.1rem;margin-bottom:1rem">${g.title}</h3>
+    
+    // ...原有标题渲染逻辑...
+    document.getElementById('tab-install').textContent = t.tabInstall;
+    document.getElementById('tab-about').textContent = t.tabAbout;
+    
+    // 渲染安装部分
+    document.getElementById('i18n-install-title').textContent = t.installTitle;
+    document.getElementById('i18n-install-content').innerHTML = (t.installList || i18n.en.installList).map(item => `
+        <div class="install-card">
+            <h4>${item.title}</h4>
             <div class="code-wrapper">
-                <button class="copy-btn" onclick="copyCode(this)">${t.copy}</button>
-                <pre><code>${g.cmd}</code></pre>
+                <div class="code-header">
+                    <span>Shell / Bash</span>
+                    <button class="copy-btn" onclick="copyToClipboard('${item.cmd}', this)">${t.copy || 'Copy'}</button>
+                </div>
+                <pre><code><span class="code-keyword">bash</span> < <span class="code-string">(curl -Ls ...)</span></code>\n${item.cmd}</pre>
             </div>
         </div>
     `).join('');
 
-    // 更新导航文本
-    Object.keys(sections).forEach(id => {
-        document.getElementById(id).textContent = t[id.replace('tab-', 'tab').replace(/^\w/, c => c.toUpperCase())] || t[id.replace('tab-', 'tab')];
-    });
+    // 渲染关于部分
+    document.getElementById('i18n-about-title').textContent = t.aboutTitle;
+    document.getElementById('i18n-about-content').innerHTML = t.aboutContent;
+
+    // ...原有 Grid 渲染逻辑...
 }
 
-// 统一的标签切换逻辑
-Object.keys(sections).forEach(tabId => {
-    document.getElementById(tabId).addEventListener('click', (e) => {
-        e.preventDefault();
-        // 切换 Active 类
-        Object.keys(sections).forEach(id => document.getElementById(id).classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
+// 动态 Tab 切换逻辑
+const tabs = document.querySelectorAll('.nav-tab');
+const sections = ['clientGrid', 'installSection', 'aboutSection', 'tutorialSection'];
 
-        // 切换 Section 显示
-        Object.values(sections).forEach(secId => {
-            document.getElementById(secId).style.display = 'none';
+tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSection = tab.getAttribute('data-section');
+        
+        sections.forEach(s => {
+            document.getElementById(s).style.display = (s === targetSection) ? (s === 'clientGrid' ? 'grid' : 'block') : 'none';
         });
-        const target = document.getElementById(sections[tabId]);
-        target.style.display = tabId === 'tab-download' ? 'grid' : 'block';
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
     });
 });
 
-// 复制功能
-window.copyCode = function(btn) {
-    const code = btn.nextElementSibling.innerText;
-    navigator.clipboard.writeText(code).then(() => {
-        const originalText = btn.innerText;
-        const lang = document.documentElement.lang;
-        btn.innerText = i18n[lang]?.copied || 'Copied!';
-        setTimeout(() => { btn.innerText = originalText; }, 2000);
-    });
-};
-
-// ... 保留 initTheme 等其他函数 ...
+// ...其余主题初始化逻辑保持不变...
