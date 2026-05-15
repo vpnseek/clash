@@ -1,67 +1,80 @@
-/* ... 保留原有代码 ... */
+/* ...保留原有代码... */
 
-/* 新增内容区块样式 */
-.content-section {
-    display: none; /* 默认隐藏，由 JS 控制显示 */
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* About 页面样式 */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* 新增：安装脚本代码块样式 */
+.install-container {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    margin-top: 2rem;
-}
-
-/* Install 页面 & 代码块样式 */
-.install-item {
-    margin-bottom: 2.5rem;
 }
 
 .code-wrapper {
-    position: relative;
-    margin: 1rem 0;
-    background: #011627;
+    background: #011627; /* 深色背景，适合高亮 */
     border-radius: 12px;
     border: 1px solid var(--border-color);
     overflow: hidden;
+    position: relative;
+    margin-top: 1rem;
 }
 
-pre {
-    padding: 1.25rem;
-    overflow-x: auto;
-    font-family: 'Fira Code', 'Courier New', monospace;
-    font-size: 0.9rem;
-    color: #adbac7;
-    line-height: 1.5;
+.code-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
-code { color: #79c0ff; }
+.code-header span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
 
 .copy-btn {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: rgba(255,255,255,0.1);
+    background: var(--accent-color);
+    color: white;
     border: none;
-    color: #fff;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
     cursor: pointer;
-    font-size: 0.75rem;
-    transition: all 0.2s;
+    transition: opacity 0.3s;
 }
 
-.copy-btn:hover { background: var(--accent-color); }
+.copy-btn:hover { opacity: 0.8; }
 
-/* 移动端适配优化 */
-@media (max-width: 768px) {
-    .nav-links { gap: 0.4rem; }
-    .nav-tab { font-size: 0.75rem; }
+.code-wrapper pre {
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #adbac7;
+}
+
+/* 语法高亮模拟 */
+.code-keyword { color: #ff7b72; }
+.code-comment { color: #8b949e; }
+.code-string { color: #a5d6ff; }
+
+/* 文本增强 */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.about-item {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.about-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
 }
