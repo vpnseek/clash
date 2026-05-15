@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnyTLS Download | Best Free Clients for Mihomo & sing-box</title>
-    <meta name="title" content="AnyTLS Download | Best Free Clients for Mihomo & sing-box">
-    <meta name="description" content="Download the best free and open-source AnyTLS clients. Complete directory of AnyTLS supported proxy apps for Windows, Mac, Linux, Android, iOS, and Routers.">
-    <meta name="keywords" content="AnyTLS download, AnyTLS client, Mihomo client, sing-box client, Clash AnyTLS, AnyTLS proxy, free AnyTLS apps, OpenClash AnyTLS">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://anytls.download/">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
     <div class="fission-bg"></div>
 
@@ -21,65 +5,43 @@
         <div class="container nav-container">
             <div class="logo-group">
                 <a href="/" class="logo">
-                    <img src="logo.png" alt="AnyTLS Download Logo" class="logo-img">
+                    <img src="logo.png" alt="AnyTLS Logo" class="logo-img">
                 </a>
                 <div class="nav-links">
                     <a href="#" id="tab-download" class="nav-tab active">Download</a>
+                    <a href="#" id="tab-about" class="nav-tab">About</a>
+                    <a href="#" id="tab-install" class="nav-tab">Install</a>
                     <a href="#" id="tab-tutorial" class="nav-tab">Tutorial</a>
                 </div>
             </div>
-            
-            <div class="nav-controls">
-                <div class="lang-selector">
-                    <i class="fa-solid fa-globe"></i>
-                    <select id="langSwitch" aria-label="Select Language">
-                        <option value="en">EN</option>
-                        <option value="zh">ZH</option>
-                        <option value="es">ES</option>
-                        <option value="fr">FR</option>
-                        <option value="de">DE</option>
-                        <option value="ja">JA</option>
-                        <option value="ru">RU</option>
-                        <option value="ar">AR</option>
-                    </select>
-                </div>
-                <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
             </div>
-        </div>
     </nav>
 
     <header class="hero container">
         <h1 id="i18n-title">AnyTLS Download Hub</h1>
-        <p id="i18n-desc">Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps for Mihomo and sing-box cores across Windows, macOS, Android, and Routers.</p>
+        <p id="i18n-desc">Loading...</p>
     </header>
 
     <main class="container">
-        <div class="client-grid" id="clientGrid">
-            </div>
+        <div class="client-grid content-section" id="downloadSection" style="display: grid;"></div>
 
-        <div class="tutorial-section" id="tutorialSection" style="display: none;">
+        <div class="tutorial-section content-section" id="aboutSection">
             <div class="tutorial-header">
-                <i class="fa-solid fa-book-open"></i>
-                <h2 id="i18n-tut-title">Quick Start Guide</h2>
+                <i class="fa-solid fa-rocket"></i>
+                <h2 id="i18n-about-title">Why AnyTLS?</h2>
             </div>
-            <div id="i18n-tut-content" class="tutorial-content">
-                </div>
+            <div id="i18n-about-content" class="about-grid"></div>
         </div>
+
+        <div class="tutorial-section content-section" id="installSection">
+            <div class="tutorial-header">
+                <i class="fa-solid fa-server"></i>
+                <h2 id="i18n-install-title">Server Deployment</h2>
+            </div>
+            <div id="i18n-install-content" class="tutorial-content"></div>
+        </div>
+
+        <div class="tutorial-section content-section" id="tutorialSection">
+            </div>
     </main>
-
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 AnyTLS Download. Open Source & Security First.</p>
-            <div class="footer-links">
-                <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="#"><i class="fa-solid fa-shield-cat"></i> Mihomo Core</a>
-                <a href="#"><i class="fa-solid fa-box-open"></i> sing-box</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
-</body>
-</html>
+    </body>
