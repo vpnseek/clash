@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AnyTLS Download | Best Free Clients</title>
     
     <!-- FontAwesome & Fonts -->
@@ -16,15 +16,18 @@
     <!-- 动态彩虹格子背景 -->
     <div class="rainbow-grid-bg"></div>
 
+    <!-- 左上角独立大标题 / Logo -->
+    <a href="/" class="brand-logo">
+        <i class="fa-solid fa-bolt" style="color: var(--primary);"></i> AnyTLS
+    </a>
+
+    <!-- 居中独立导航栏 (移动端自动吸底) -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo-group">
-                <a href="/" class="logo"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> AnyTLS</a>
-                <div class="nav-links">
-                    <a href="#" onclick="switchTab('install')" id="tab-install" class="nav-tab active" data-i18n="navInstall">Install</a>
-                    <a href="#" onclick="switchTab('download')" id="tab-download" class="nav-tab" data-i18n="navDownload">Download</a>
-                    <a href="#" onclick="switchTab('tutorial')" id="tab-tutorial" class="nav-tab" data-i18n="navTutorial">Tutorial</a>
-                </div>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#" onclick="switchTab('whois')" id="tab-whois" class="nav-tab active" data-i18n="navWhois">Who is AnyTLS</a>
+                <a href="#" onclick="switchTab('download')" id="tab-download" class="nav-tab" data-i18n="navDownload">Download</a>
+                <a href="#" onclick="switchTab('tutorial')" id="tab-tutorial" class="nav-tab" data-i18n="navTutorial">Tutorial</a>
             </div>
             
             <div class="nav-controls">
@@ -32,13 +35,13 @@
                     <i class="fa-solid fa-language" style="color: var(--text-muted);"></i>
                     <select id="langSwitch" onchange="changeLanguage(this.value)">
                         <option value="en">EN</option>
-                        <option value="ja">JA</option> <!-- 日语 -->
+                        <option value="ja">JA</option>
                         <option value="es">ES</option>
                         <option value="fr">FR</option>
                         <option value="de">DE</option>
                         <option value="pt">PT</option>
                         <option value="ru">RU</option>
-                        <option value="ar">AR</option> <!-- 阿拉伯语 -->
+                        <option value="ar">AR</option>
                     </select>
                 </div>
                 <button id="themeToggle" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
@@ -54,13 +57,16 @@
     </header>
 
     <main class="container">
-        <!-- 1. Install Tab -->
-        <div class="content-section" id="section-install" style="display: block;">
+        <!-- 1. Who is AnyTLS Tab -->
+        <div class="content-section" id="section-whois" style="display: block;">
             <div class="section-header">
-                <i class="fa-solid fa-terminal" style="color: var(--primary);"></i>
-                <h2 data-i18n="installTitle">AnyTLS Server Installation</h2>
+                <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i>
+                <h2 data-i18n="whoisTitle">Who is AnyTLS & Installation</h2>
             </div>
-            <p class="section-desc" data-i18n="installDesc">
+            <p class="section-desc" data-i18n="whoisIntro">
+                <strong>AnyTLS</strong> is a cutting-edge proxy protocol designed for maximum security, speed, and undetectability. It masks your internet traffic to ensure seamless global connectivity.
+            </p>
+            <p class="section-desc" data-i18n="whoisDesc">
                 Run this one-click script on your server (Ubuntu/Debian/CentOS) to automatically deploy the AnyTLS backend directly from GitHub.
             </p>
             <div class="code-block-wrapper">
@@ -69,10 +75,8 @@
             </div>
         </div>
 
-        <!-- 2. Download Tab (Added Hiddify) -->
+        <!-- 2. Download Tab -->
         <div class="client-grid" id="section-download" style="display: none;">
-            
-            <!-- Hiddify (New) -->
             <div class="client-card">
                 <h3>Hiddify</h3>
                 <p data-i18n="descHiddify">Powerful, user-friendly client for all platforms. Excellent AnyTLS support for both beginners and pros.</p>
@@ -84,7 +88,6 @@
                 </div>
             </div>
 
-            <!-- Mihomo Party -->
             <div class="client-card">
                 <h3>Mihomo Party</h3>
                 <p data-i18n="descMihomo">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
@@ -95,7 +98,6 @@
                 </div>
             </div>
 
-            <!-- Clash Verge Rev -->
             <div class="client-card">
                 <h3>Clash Verge Rev</h3>
                 <p data-i18n="descVerge">Continuation of Clash Verge. Excellent UI and rule management.</p>
@@ -106,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- Mobile -->
             <div class="client-card">
                 <h3>FlClash / Surfboard</h3>
                 <p data-i18n="descAndroid">Top-tier clients for Android with native Material You design and AnyTLS support.</p>
@@ -123,7 +124,6 @@
                 </div>
             </div>
 
-            <!-- Routers -->
             <div class="client-card">
                 <h3>OpenClash</h3>
                 <p data-i18n="descRouter">OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.</p>
