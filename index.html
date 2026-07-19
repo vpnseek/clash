@@ -5,133 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnyTLS Download | Best Free Clients</title>
     
+    <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <style>
-        /* CSS Variables - Dark (Default) & Light Modes */
-        :root {
-            --primary: #a855f7;
-            --primary-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-            --radius-lg: 24px;
-            --radius-full: 9999px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #09090b;
-            --surface: rgba(255, 255, 255, 0.03);
-            --surface-hover: rgba(255, 255, 255, 0.08);
-            --border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --code-bg: #1e1e1e;
-        }
-
-        [data-theme="light"] {
-            --bg-color: #f8fafc;
-            --surface: rgba(0, 0, 0, 0.03);
-            --surface-hover: rgba(0, 0, 0, 0.08);
-            --border: rgba(0, 0, 0, 0.1);
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --code-bg: #f1f5f9;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .fission-bg {
-            position: fixed;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 30%);
-            z-index: -1;
-            animation: pulse 15s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
-
-        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        .navbar {
-            position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1000px; background: var(--surface);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border); border-radius: var(--radius-full);
-            z-index: 1000; padding: 12px 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.25rem; font-weight: 800; text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
-        
-        .nav-links { display: flex; gap: 8px; background: var(--surface); padding: 4px; border-radius: var(--radius-full); border: 1px solid var(--border); }
-        .nav-tab { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; padding: 8px 20px; border-radius: var(--radius-full); transition: var(--transition); }
-        .nav-tab:hover { color: var(--text-main); }
-        .nav-tab.active { background: var(--surface-hover); color: var(--text-main); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-
-        .nav-controls { display: flex; align-items: center; gap: 16px; }
-        .lang-selector select { background: transparent; color: var(--text-main); border: none; outline: none; font-weight: 600; cursor: pointer; appearance: none; }
-        .lang-selector select option { background: var(--bg-color); color: var(--text-main); }
-        .theme-btn { background: transparent; border: none; color: var(--text-main); font-size: 1.1rem; cursor: pointer; transition: var(--transition); }
-        .theme-btn:hover { color: var(--primary); transform: rotate(15deg); }
-
-        .hero { padding: 180px 0 80px; text-align: center; }
-        .hero h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; margin-bottom: 24px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
-        .hero p { font-size: 1.125rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-
-        .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding-bottom: 80px; }
-        .client-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(10px); transition: var(--transition); display: flex; flex-direction: column; gap: 16px; }
-        .client-card:hover { transform: translateY(-5px); background: var(--surface-hover); border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2); }
-        
-        .platform-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
-        .btn-download { background: var(--primary-gradient); color: white; padding: 8px 16px; border-radius: var(--radius-full); text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
-        .btn-download:hover { opacity: 0.9; transform: scale(1.02); }
-        .btn-download.mac { background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%); }
-        .btn-download.linux { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
-        .btn-download.android { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-        .btn-download.ios { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
-        .btn-download.router { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
-
-        .content-section { display: none; padding-bottom: 80px; max-width: 800px; margin: 0 auto; }
-        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 1.5rem; }
-
-        .code-block-wrapper { background: var(--code-bg); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--border); position: relative; overflow: hidden; }
-        .code-block-wrapper pre { font-family: monospace; color: var(--text-main); overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
-        .copy-btn { position: absolute; top: 12px; right: 12px; background: var(--primary-gradient); color: white; border: none; padding: 6px 16px; border-radius: var(--radius-full); cursor: pointer; font-weight: 600; font-size: 0.8rem; transition: var(--transition); }
-        
-        /* Tutorial Timeline */
-        .tutorial-steps { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
-        .step-item { background: var(--surface); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
-        .step-title { display: flex; align-items: center; gap: 12px; font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--primary); }
-        .step-art { font-family: monospace; font-size: 1.5rem; margin-bottom: 16px; text-align: center; color: var(--text-main); }
-        .step-code { background: var(--code-bg); padding: 12px; border-radius: 8px; margin-top: 12px; font-family: monospace; font-size: 0.9rem; word-break: break-all; }
-
-        footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(--surface); }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; color: var(--text-muted); font-size: 0.9rem; }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: var(--primary); }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="fission-bg"></div>
+    <!-- 动态彩虹格子背景 -->
+    <div class="rainbow-grid-bg"></div>
 
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo-group">
                 <a href="/" class="logo"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> AnyTLS</a>
-                <!-- 调整了顺序：Install -> Download -> Tutorial -->
                 <div class="nav-links">
                     <a href="#" onclick="switchTab('install')" id="tab-install" class="nav-tab active" data-i18n="navInstall">Install</a>
                     <a href="#" onclick="switchTab('download')" id="tab-download" class="nav-tab" data-i18n="navDownload">Download</a>
@@ -140,17 +28,17 @@
             </div>
             
             <div class="nav-controls">
-                <div class="lang-selector" style="display: flex; align-items: center; gap: 6px;">
+                <div class="lang-selector">
                     <i class="fa-solid fa-language" style="color: var(--text-muted);"></i>
                     <select id="langSwitch" onchange="changeLanguage(this.value)">
                         <option value="en">EN</option>
-                        <option value="zh">ZH</option>
+                        <option value="ja">JA</option> <!-- 日语 -->
                         <option value="es">ES</option>
                         <option value="fr">FR</option>
                         <option value="de">DE</option>
                         <option value="pt">PT</option>
                         <option value="ru">RU</option>
-                        <option value="la">LA</option>
+                        <option value="ar">AR</option> <!-- 阿拉伯语 -->
                     </select>
                 </div>
                 <button id="themeToggle" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
@@ -166,13 +54,13 @@
     </header>
 
     <main class="container">
-        <!-- 1. Install Tab (Now Default Active) -->
+        <!-- 1. Install Tab -->
         <div class="content-section" id="section-install" style="display: block;">
             <div class="section-header">
                 <i class="fa-solid fa-terminal" style="color: var(--primary);"></i>
                 <h2 data-i18n="installTitle">AnyTLS Server Installation</h2>
             </div>
-            <p style="color: var(--text-muted); margin-bottom: 24px;" data-i18n="installDesc">
+            <p class="section-desc" data-i18n="installDesc">
                 Run this one-click script on your server (Ubuntu/Debian/CentOS) to automatically deploy the AnyTLS backend directly from GitHub.
             </p>
             <div class="code-block-wrapper">
@@ -181,13 +69,25 @@
             </div>
         </div>
 
-        <!-- 2. Download Tab (Multi-Platform) -->
+        <!-- 2. Download Tab (Added Hiddify) -->
         <div class="client-grid" id="section-download" style="display: none;">
             
-            <!-- Windows/Desktop -->
+            <!-- Hiddify (New) -->
             <div class="client-card">
-                <h3 style="font-size: 1.25rem;">Mihomo Party</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descMihomo">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
+                <h3>Hiddify</h3>
+                <p data-i18n="descHiddify">Powerful, user-friendly client for all platforms. Excellent AnyTLS support for both beginners and pros.</p>
+                <div class="platform-tags">
+                    <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" class="btn-download"><i class="fa-brands fa-windows"></i> Win</a>
+                    <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" class="btn-download mac"><i class="fa-brands fa-apple"></i> Mac</a>
+                    <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" class="btn-download linux"><i class="fa-brands fa-linux"></i> Linux</a>
+                    <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank" class="btn-download android"><i class="fa-brands fa-android"></i> Android</a>
+                </div>
+            </div>
+
+            <!-- Mihomo Party -->
+            <div class="client-card">
+                <h3>Mihomo Party</h3>
+                <p data-i18n="descMihomo">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
                 <div class="platform-tags">
                     <a href="#" class="btn-download"><i class="fa-brands fa-windows"></i> Win</a>
                     <a href="#" class="btn-download mac"><i class="fa-brands fa-apple"></i> Mac</a>
@@ -195,9 +95,10 @@
                 </div>
             </div>
 
+            <!-- Clash Verge Rev -->
             <div class="client-card">
-                <h3 style="font-size: 1.25rem;">Clash Verge Rev</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descVerge">Continuation of Clash Verge. Excellent UI and rule management.</p>
+                <h3>Clash Verge Rev</h3>
+                <p data-i18n="descVerge">Continuation of Clash Verge. Excellent UI and rule management.</p>
                 <div class="platform-tags">
                     <a href="#" class="btn-download"><i class="fa-brands fa-windows"></i> Win</a>
                     <a href="#" class="btn-download mac"><i class="fa-brands fa-apple"></i> Mac</a>
@@ -207,16 +108,16 @@
 
             <!-- Mobile -->
             <div class="client-card">
-                <h3 style="font-size: 1.25rem;">FlClash / Surfboard</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descAndroid">Top-tier clients for Android with native Material You design and AnyTLS support.</p>
+                <h3>FlClash / Surfboard</h3>
+                <p data-i18n="descAndroid">Top-tier clients for Android with native Material You design and AnyTLS support.</p>
                 <div class="platform-tags">
                     <a href="#" class="btn-download android"><i class="fa-brands fa-android"></i> Android</a>
                 </div>
             </div>
 
             <div class="client-card">
-                <h3 style="font-size: 1.25rem;">Shadowrocket / Stash</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descIOS">Powerful iOS clients. Import Clash profiles seamlessly for full AnyTLS connectivity.</p>
+                <h3>Shadowrocket / Stash</h3>
+                <p data-i18n="descIOS">Powerful iOS clients. Import Clash profiles seamlessly for full AnyTLS connectivity.</p>
                 <div class="platform-tags">
                     <a href="#" class="btn-download ios"><i class="fa-brands fa-apple"></i> iOS / iPad</a>
                 </div>
@@ -224,15 +125,15 @@
 
             <!-- Routers -->
             <div class="client-card">
-                <h3 style="font-size: 1.25rem;">OpenClash</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descRouter">OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.</p>
+                <h3>OpenClash</h3>
+                <p data-i18n="descRouter">OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.</p>
                 <div class="platform-tags">
                     <a href="#" class="btn-download router"><i class="fa-solid fa-network-wired"></i> OpenWrt</a>
                 </div>
             </div>
         </div>
 
-        <!-- 3. Tutorial Tab (Anthropomorphic/Emoji Guide) -->
+        <!-- 3. Tutorial Tab -->
         <div class="content-section" id="section-tutorial">
             <div class="section-header">
                 <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
@@ -241,28 +142,22 @@
             
             <div class="tutorial-steps">
                 <div class="step-item">
-                    <div class="step-art">
-                        (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 🔗
-                    </div>
+                    <div class="step-art">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 🔗</div>
                     <div class="step-title" data-i18n="step1Title">Step 1: Get Your Subscription Link</div>
-                    <p style="color: var(--text-muted);" data-i18n="step1Desc">Log into your service provider's panel. Find the "Copy Clash Subscription" button and click it! The link will look something like this:</p>
+                    <p data-i18n="step1Desc">Log into your service provider's panel. Find the "Copy Clash Subscription" button and click it! The link will look something like this:</p>
                     <div class="step-code">https://sub.justmyrelay.com/api/v1/client/subscribe?token=your_secret_token</div>
                 </div>
 
                 <div class="step-item">
-                    <div class="step-art">
-                        ʕ•ᴥ•ʔ 📋 ➔ 💻
-                    </div>
+                    <div class="step-art">ʕ•ᴥ•ʔ 📋 ➔ 💻</div>
                     <div class="step-title" data-i18n="step2Title">Step 2: Feed It to Your Client</div>
-                    <p style="color: var(--text-muted);" data-i18n="step2Desc">Open your downloaded client (like Mihomo Party). Go to <b>Profiles / Subscriptions</b>, click <b>Add</b>, and paste the URL you just copied. Tell it to fetch!</p>
+                    <p data-i18n="step2Desc">Open your downloaded client (like Mihomo Party). Go to <b>Profiles / Subscriptions</b>, click <b>Add</b>, and paste the URL you just copied. Tell it to fetch!</p>
                 </div>
 
                 <div class="step-item">
-                    <div class="step-art">
-                        (🚀•̀ᴗ•́)و ̑̑ 🌐
-                    </div>
+                    <div class="step-art">(🚀•̀ᴗ•́)و ̑̑ 🌐</div>
                     <div class="step-title" data-i18n="step3Title">Step 3: Connect and Fly</div>
-                    <p style="color: var(--text-muted);" data-i18n="step3Desc">Hit the "Update" button to download the latest nodes. Finally, toggle the main switch to <b>ON</b>. Congratulations, you are now surfing securely with AnyTLS!</p>
+                    <p data-i18n="step3Desc">Hit the "Update" button to download the latest nodes. Finally, toggle the main switch to <b>ON</b>. Congratulations, you are now surfing securely with AnyTLS!</p>
                 </div>
             </div>
         </div>
@@ -277,101 +172,7 @@
         </div>
     </footer>
 
-    <script>
-        // 1. Tab Switching Logic
-        function switchTab(tabId) {
-            document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
-            document.getElementById(`tab-${tabId}`).classList.add('active');
-
-            document.getElementById('section-install').style.display = 'none';
-            document.getElementById('section-download').style.display = 'none';
-            document.getElementById('section-tutorial').style.display = 'none';
-
-            if(tabId === 'download') {
-                document.getElementById('section-download').style.display = 'grid';
-            } else {
-                document.getElementById(`section-${tabId}`).style.display = 'block';
-            }
-        }
-
-        // 2. Theme Switching Logic
-        function toggleTheme() {
-            const html = document.documentElement;
-            const icon = document.querySelector('#themeToggle i');
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.setAttribute('data-theme', 'light');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-
-        // 3. Copy Code Logic
-        function copyCode() {
-            const code = document.getElementById('scriptCode').innerText;
-            const btn = document.getElementById('copyBtn');
-            navigator.clipboard.writeText(code).then(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                setTimeout(() => { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000);
-            });
-        }
-
-        // 4. i18n Logic
-        const translations = {
-            en: {
-                navInstall: "Install", navDownload: "Download", navTutorial: "Tutorial",
-                heroTitle: "AnyTLS Download Hub",
-                heroDesc: "Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps across all devices.",
-                installTitle: "AnyTLS Server Installation",
-                installDesc: "Run this one-click script on your server (Ubuntu/Debian/CentOS) to automatically deploy the AnyTLS backend directly from GitHub.",
-                descMihomo: "The ultimate graphical interface for Mihomo core. Cross-platform and elegant.",
-                descVerge: "Continuation of Clash Verge. Excellent UI and rule management.",
-                descAndroid: "Top-tier clients for Android with native Material You design and AnyTLS support.",
-                descIOS: "Powerful iOS clients. Import Clash profiles seamlessly for full AnyTLS connectivity.",
-                descRouter: "OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.",
-                tutTitle: "How to Import Clash Subscription",
-                step1Title: "Step 1: Get Your Subscription Link",
-                step1Desc: "Log into your service provider's panel. Find the \"Copy Clash Subscription\" button and click it! The link will look something like this:",
-                step2Title: "Step 2: Feed It to Your Client",
-                step2Desc: "Open your downloaded client (like Mihomo Party). Go to Profiles / Subscriptions, click Add, and paste the URL you just copied. Tell it to fetch!",
-                step3Title: "Step 3: Connect and Fly",
-                step3Desc: "Hit the \"Update\" button to download the latest nodes. Finally, toggle the main switch to ON. Congratulations, you are now surfing securely with AnyTLS!"
-            },
-            zh: {
-                navInstall: "一键安装", navDownload: "下载中心", navTutorial: "使用教程",
-                heroTitle: "AnyTLS 客户端下载",
-                heroDesc: "下载支持 AnyTLS 代理协议的最佳免费开源客户端。获取全平台设备的安全应用。",
-                installTitle: "AnyTLS 服务端一键部署",
-                installDesc: "在您的服务器（Ubuntu/Debian/CentOS）上运行此一键脚本，即可从 GitHub 自动部署 AnyTLS 后端。",
-                descMihomo: "Mihomo 核心的终极图形界面。跨平台且优雅。",
-                descVerge: "Clash Verge 的正统延续。极其出色的 UI 和规则管理。",
-                descAndroid: "Android 顶配客户端，原生质感设计，全面支持 AnyTLS。",
-                descIOS: "强大的 iOS 客户端。无缝导入 Clash 配置以获得 AnyTLS 体验。",
-                descRouter: "OpenWrt 路由器插件。为整个家庭网络赋予 AnyTLS 代理能力。",
-                tutTitle: "如何导入 Clash 订阅",
-                step1Title: "第一步：获取你的专属订阅链接",
-                step1Desc: "登录你机场/服务商的面板后台。找到“复制 Clash 订阅”按钮并狠狠点击它！链接通常长这样：",
-                step2Title: "第二步：喂给你的客户端",
-                step2Desc: "打开你下载好的客户端（比如 Mihomo Party）。前往 配置 / 订阅 (Profiles)，点击 添加 (Add)，然后把刚刚的 URL 贴进去，让它去抓取吧！",
-                step3Title: "第三步：连接并起飞",
-                step3Desc: "点击“更新”按钮下载最新的节点列表。最后，把主开关拨到 ON。恭喜你，现在正通过 AnyTLS 安全冲浪！"
-            }
-        };
-
-        function changeLanguage(langCode) {
-            // Simplified fallback logic
-            const lang = translations[langCode] ? langCode : 'en'; 
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key]; 
-                }
-            });
-            document.documentElement.lang = lang;
-        }
-    </script>
+    <!-- External JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
