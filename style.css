@@ -1,20 +1,20 @@
 /* CSS Variables - Dark (Default) & Light Modes */
 :root {
-    --primary: #a855f7;
-    --primary-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    --primary: #0ea5e9; /* 改为主色调为科技蓝 */
+    --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
     --radius-lg: 24px;
     --radius-full: 9999px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] {
-    --bg-color: #09090b;
+    --bg-color: #020617;
     --surface: rgba(255, 255, 255, 0.03);
     --surface-hover: rgba(255, 255, 255, 0.08);
     --border: rgba(255, 255, 255, 0.15);
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    --code-bg: #1e1e1e;
+    --code-bg: #0f172a;
 }
 
 [data-theme="light"] {
@@ -24,7 +24,7 @@
     --border: rgba(0, 0, 0, 0.1);
     --text-main: #0f172a;
     --text-muted: #64748b;
-    --code-bg: #f1f5f9;
+    --code-bg: #e2e8f0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,19 +38,21 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* ======== 彩虹格子多变背景 ======== */
+/* ======== 科技风格子多变背景 (Tech Blue Grid) ======== */
 .rainbow-grid-bg {
     position: fixed;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
     z-index: -1;
-    background: linear-gradient(45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb, #ff9a9e);
+    /* 亮色模式：清爽极客蓝 */
+    background: linear-gradient(45deg, #f0f9ff, #e0f2fe, #bae6fd, #7dd3fc, #f0f9ff);
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
 }
 
 [data-theme="dark"] .rainbow-grid-bg {
-    background: linear-gradient(45deg, #2a0845, #6441A5, #d76d77, #4b1248, #2a0845);
+    /* 暗色模式：深邃网络蓝/青色 */
+    background: linear-gradient(45deg, #020617, #1e3a8a, #0891b2, #172554, #020617);
     background-size: 400% 400%;
 }
 
@@ -60,8 +62,8 @@ body {
     background-image: 
         linear-gradient(to right, var(--border) 1px, transparent 1px),
         linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-    mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 60%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 60%);
+    mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%);
     animation: grid-move 20s linear infinite;
 }
 
@@ -99,7 +101,7 @@ body {
 .nav-controls { display: flex; align-items: center; gap: 16px; }
 .lang-selector { display: flex; align-items: center; gap: 6px; }
 .lang-selector select { background: transparent; color: var(--text-main); border: none; outline: none; font-weight: 600; cursor: pointer; appearance: none; }
-.lang-selector select option { background: var(--bg-color); color: var(--text-main); }
+.lang-selector select option { background: var(--bg-color); color: var(--text-main); direction: ltr; } /* 防止下拉选项文字错位 */
 .theme-btn { background: transparent; border: none; color: var(--text-main); font-size: 1.1rem; cursor: pointer; transition: var(--transition); }
 .theme-btn:hover { color: var(--primary); transform: rotate(15deg); }
 
@@ -111,7 +113,7 @@ body {
 .client-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(10px); transition: var(--transition); display: flex; flex-direction: column; gap: 16px; }
 .client-card h3 { font-size: 1.25rem; }
 .client-card p { color: var(--text-muted); font-size: 0.9rem; }
-.client-card:hover { transform: translateY(-5px); background: var(--surface-hover); border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2); }
+.client-card:hover { transform: translateY(-5px); background: var(--surface-hover); border-color: rgba(14, 165, 233, 0.4); box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.2); }
 
 .platform-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .btn-download { background: var(--primary-gradient); color: white; padding: 8px 16px; border-radius: var(--radius-full); text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
@@ -142,16 +144,13 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(-
 
 /* ======== 多端自适应 (iOS, Android, Windows, Mac 等) ======== */
 @media (max-width: 900px) {
-    /* 平板及小屏幕 */
     .brand-logo { position: relative; top: 0; left: 0; display: block; text-align: center; padding: 20px 0 0 0; justify-content: center; }
     .navbar { width: 90%; }
 }
 
 @media (max-width: 768px) {
-    /* 手机移动端 (类似 App 体验) */
     .hero { padding: 40px 0 40px; }
     
-    /* 导航栏吸底浮动 */
     .navbar {
         top: auto; bottom: 20px;
         width: calc(100% - 40px);
@@ -164,7 +163,10 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(-
     .nav-tab { flex: 1; text-align: center; padding: 8px 12px; font-size: 0.85rem; }
     .nav-controls { width: 100%; justify-content: center; }
     
-    /* 为底部导航栏预留空间，防止挡住内容 */
     .content-section, .client-grid { padding-bottom: 120px; }
     footer { padding-bottom: 100px; }
 }
+
+/* AR RTL Layout fixes for Dropdown & Logo */
+[dir="rtl"] .brand-logo { left: auto; right: 32px; }
+[dir="rtl"] .copy-btn { right: auto; left: 12px; }
