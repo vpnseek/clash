@@ -7,12 +7,253 @@
     <meta name="title" content="AnyTLS Download | Best Free Clients for Mihomo & sing-box">
     <meta name="description" content="Download the best free and open-source AnyTLS clients. Complete directory of AnyTLS supported proxy apps for Windows, Mac, Linux, Android, iOS, and Routers.">
     <meta name="keywords" content="AnyTLS download, AnyTLS client, Mihomo client, sing-box client, Clash AnyTLS, AnyTLS proxy, free AnyTLS apps, OpenClash AnyTLS">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://anytls.download/">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Mihomo Party Inspired Theme */
+        :root {
+            --bg-dark: #09090b;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.1);
+            --primary: #a855f7;
+            --primary-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Fission Background */
+        .fission-bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 30%);
+            z-index: -1;
+            animation: pulse 15s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Floating Glassmorphism Navbar */
+        .navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(9, 9, 11, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            z-index: 1000;
+            padding: 12px 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Nav Links as Pills */
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            background: var(--surface);
+            padding: 4px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+        }
+
+        .nav-tab {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+        }
+
+        .nav-tab:hover {
+            color: var(--text-main);
+        }
+
+        .nav-tab.active {
+            background: var(--surface-hover);
+            color: var(--text-main);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-selector select {
+            background: transparent;
+            color: var(--text-main);
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .theme-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-btn:hover {
+            color: var(--primary);
+            transform: rotate(15deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Client Grid - Glass Cards */
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            padding-bottom: 80px;
+        }
+
+        /* Demo Card Styling (To be generated by your app.js) */
+        .client-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            background: var(--surface-hover);
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+    </style>
 </head>
 <body>
     <div class="fission-bg"></div>
@@ -21,7 +262,7 @@
         <div class="container nav-container">
             <div class="logo-group">
                 <a href="/" class="logo">
-                    <img src="logo.png" alt="AnyTLS Download Logo" class="logo-img">
+                    <i class="fa-solid fa-bolt" style="color: var(--primary);"></i> AnyTLS
                 </a>
                 <div class="nav-links">
                     <a href="#" id="tab-download" class="nav-tab active">Download</a>
@@ -30,17 +271,11 @@
             </div>
             
             <div class="nav-controls">
-                <div class="lang-selector">
-                    <i class="fa-solid fa-globe"></i>
+                <div class="lang-selector" style="display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-globe" style="color: var(--text-muted);"></i>
                     <select id="langSwitch" aria-label="Select Language">
                         <option value="en">EN</option>
                         <option value="zh">ZH</option>
-                        <option value="es">ES</option>
-                        <option value="fr">FR</option>
-                        <option value="de">DE</option>
-                        <option value="ja">JA</option>
-                        <option value="ru">RU</option>
-                        <option value="ar">AR</option>
                     </select>
                 </div>
                 <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
@@ -56,8 +291,17 @@
     </header>
 
     <main class="container">
+        <!-- I added a demo card here so you can see the new CSS in action -->
         <div class="client-grid" id="clientGrid">
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">Mihomo Party</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
+                <div style="margin-top: auto; display: flex; gap: 12px;">
+                    <a href="#" style="background: var(--primary-gradient); color: white; padding: 8px 16px; border-radius: var(--radius-full); text-decoration: none; font-weight: 600; font-size: 0.9rem;"><i class="fa-brands fa-windows"></i> Windows</a>
+                </div>
             </div>
+            <!-- Your app.js will dynamically inject more cards here -->
+        </div>
 
         <div class="tutorial-section" id="tutorialSection" style="display: none;">
             <div class="tutorial-header">
@@ -65,7 +309,7 @@
                 <h2 id="i18n-tut-title">Quick Start Guide</h2>
             </div>
             <div id="i18n-tut-content" class="tutorial-content">
-                </div>
+            </div>
         </div>
     </main>
 
