@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnyTLS Download | Best Free Clients for Mihomo & sing-box</title>
-    <meta name="title" content="AnyTLS Download | Best Free Clients for Mihomo & sing-box">
-    <meta name="description" content="Download the best free and open-source AnyTLS clients.">
+    <title>AnyTLS Download | Best Free Clients</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -51,7 +49,6 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Ambient Fission Background */
         .fission-bg {
             position: fixed;
             top: -50%; left: -50%;
@@ -63,130 +60,65 @@
             pointer-events: none;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* Floating Glassmorphism Navbar */
         .navbar {
-            position: fixed;
-            top: 24px; left: 50%;
-            transform: translateX(-50%);
-            width: 90%; max-width: 1000px;
-            background: var(--surface);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-full);
-            z-index: 1000;
-            padding: 12px 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1000px; background: var(--surface);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border); border-radius: var(--radius-full);
+            z-index: 1000; padding: 12px 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-
-        .logo {
-            font-size: 1.25rem; font-weight: 800; text-decoration: none;
-            color: var(--text-main); display: flex; align-items: center; gap: 12px;
-        }
-
-        .nav-links {
-            display: flex; gap: 8px;
-            background: var(--surface); padding: 4px;
-            border-radius: var(--radius-full); border: 1px solid var(--border);
-        }
-
-        .nav-tab {
-            text-decoration: none; color: var(--text-muted);
-            font-weight: 600; font-size: 0.9rem;
-            padding: 8px 20px; border-radius: var(--radius-full);
-            transition: var(--transition);
-        }
-
+        .logo { font-size: 1.25rem; font-weight: 800; text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
+        
+        .nav-links { display: flex; gap: 8px; background: var(--surface); padding: 4px; border-radius: var(--radius-full); border: 1px solid var(--border); }
+        .nav-tab { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; padding: 8px 20px; border-radius: var(--radius-full); transition: var(--transition); }
         .nav-tab:hover { color: var(--text-main); }
-        .nav-tab.active {
-            background: var(--surface-hover); color: var(--text-main);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+        .nav-tab.active { background: var(--surface-hover); color: var(--text-main); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
         .nav-controls { display: flex; align-items: center; gap: 16px; }
-
-        .lang-selector select {
-            background: transparent; color: var(--text-main);
-            border: none; outline: none; font-weight: 600;
-            cursor: pointer; appearance: none;
-        }
-
-        .lang-selector select option {
-            background: var(--bg-color); color: var(--text-main);
-        }
-
-        .theme-btn {
-            background: transparent; border: none; color: var(--text-main);
-            font-size: 1.1rem; cursor: pointer; transition: var(--transition);
-        }
+        .lang-selector select { background: transparent; color: var(--text-main); border: none; outline: none; font-weight: 600; cursor: pointer; appearance: none; }
+        .lang-selector select option { background: var(--bg-color); color: var(--text-main); }
+        .theme-btn { background: transparent; border: none; color: var(--text-main); font-size: 1.1rem; cursor: pointer; transition: var(--transition); }
         .theme-btn:hover { color: var(--primary); transform: rotate(15deg); }
 
-        /* Hero Section */
         .hero { padding: 180px 0 80px; text-align: center; }
-        .hero h1 {
-            font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800;
-            margin-bottom: 24px; background: var(--primary-gradient);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
+        .hero h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; margin-bottom: 24px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { font-size: 1.125rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-        /* Grid */
-        .client-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px; padding-bottom: 80px;
-        }
+        .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding-bottom: 80px; }
+        .client-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(10px); transition: var(--transition); display: flex; flex-direction: column; gap: 16px; }
+        .client-card:hover { transform: translateY(-5px); background: var(--surface-hover); border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2); }
+        
+        .platform-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+        .btn-download { background: var(--primary-gradient); color: white; padding: 8px 16px; border-radius: var(--radius-full); text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
+        .btn-download:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-download.mac { background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%); }
+        .btn-download.linux { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .btn-download.android { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .btn-download.ios { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+        .btn-download.router { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
 
-        .client-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 24px;
-            backdrop-filter: blur(10px); transition: var(--transition);
-            display: flex; flex-direction: column; gap: 16px;
-        }
-        .client-card:hover {
-            transform: translateY(-5px); background: var(--surface-hover);
-            border-color: rgba(168, 85, 247, 0.4);
-            box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2);
-        }
-
-        /* Content Sections */
         .content-section { display: none; padding-bottom: 80px; max-width: 800px; margin: 0 auto; }
         .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 1.5rem; }
 
-        /* Code Block */
-        .code-block-wrapper {
-            background: var(--code-bg); padding: 24px;
-            border-radius: var(--radius-lg); border: 1px solid var(--border);
-            position: relative; overflow: hidden;
-        }
-        .code-block-wrapper pre {
-            font-family: monospace; color: var(--text-main);
-            overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;
-        }
-        .copy-btn {
-            position: absolute; top: 12px; right: 12px;
-            background: var(--primary-gradient); color: white;
-            border: none; padding: 6px 16px; border-radius: var(--radius-full);
-            cursor: pointer; font-weight: 600; font-size: 0.8rem;
-            transition: var(--transition);
-        }
-        .copy-btn:hover { opacity: 0.9; transform: scale(1.05); }
+        .code-block-wrapper { background: var(--code-bg); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--border); position: relative; overflow: hidden; }
+        .code-block-wrapper pre { font-family: monospace; color: var(--text-main); overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+        .copy-btn { position: absolute; top: 12px; right: 12px; background: var(--primary-gradient); color: white; border: none; padding: 6px 16px; border-radius: var(--radius-full); cursor: pointer; font-weight: 600; font-size: 0.8rem; transition: var(--transition); }
+        
+        /* Tutorial Timeline */
+        .tutorial-steps { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+        .step-item { background: var(--surface); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+        .step-title { display: flex; align-items: center; gap: 12px; font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--primary); }
+        .step-art { font-family: monospace; font-size: 1.5rem; margin-bottom: 16px; text-align: center; color: var(--text-main); }
+        .step-code { background: var(--code-bg); padding: 12px; border-radius: 8px; margin-top: 12px; font-family: monospace; font-size: 0.9rem; word-break: break-all; }
 
-        /* Footer */
         footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(--surface); }
-        .footer-content {
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 24px; color: var(--text-muted); font-size: 0.9rem;
-        }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; color: var(--text-muted); font-size: 0.9rem; }
         .footer-links { display: flex; gap: 24px; }
         .footer-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
         .footer-links a:hover { color: var(--primary); }
@@ -199,10 +131,11 @@
         <div class="container nav-container">
             <div class="logo-group">
                 <a href="/" class="logo"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> AnyTLS</a>
+                <!-- 调整了顺序：Install -> Download -> Tutorial -->
                 <div class="nav-links">
-                    <a href="#" onclick="switchTab('download')" id="tab-download" class="nav-tab active" data-i18n="navDownload">Download</a>
+                    <a href="#" onclick="switchTab('install')" id="tab-install" class="nav-tab active" data-i18n="navInstall">Install</a>
+                    <a href="#" onclick="switchTab('download')" id="tab-download" class="nav-tab" data-i18n="navDownload">Download</a>
                     <a href="#" onclick="switchTab('tutorial')" id="tab-tutorial" class="nav-tab" data-i18n="navTutorial">Tutorial</a>
-                    <a href="#" onclick="switchTab('install')" id="tab-install" class="nav-tab" data-i18n="navInstall">Install</a>
                 </div>
             </div>
             
@@ -229,34 +162,12 @@
 
     <header class="hero container">
         <h1 data-i18n="heroTitle">AnyTLS Download Hub</h1>
-        <p data-i18n="heroDesc">Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps for Mihomo and sing-box cores.</p>
+        <p data-i18n="heroDesc">Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps across all devices.</p>
     </header>
 
     <main class="container">
-        <!-- 1. Download Tab -->
-        <div class="client-grid" id="section-download">
-            <div class="client-card">
-                <h3 style="font-size: 1.25rem;">Mihomo Party</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="cardDesc">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
-                <div style="margin-top: auto;">
-                    <a href="#" style="background: var(--primary-gradient); color: white; padding: 8px 16px; border-radius: var(--radius-full); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">
-                        <i class="fa-brands fa-windows"></i> Windows
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. Tutorial Tab -->
-        <div class="content-section" id="section-tutorial">
-            <div class="section-header">
-                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
-                <h2 data-i18n="tutTitle">Quick Start Guide</h2>
-            </div>
-            <p style="color: var(--text-muted);" data-i18n="tutDesc">Tutorial content will be populated here.</p>
-        </div>
-
-        <!-- 3. Install Tab (New GitHub Script Section) -->
-        <div class="content-section" id="section-install">
+        <!-- 1. Install Tab (Now Default Active) -->
+        <div class="content-section" id="section-install" style="display: block;">
             <div class="section-header">
                 <i class="fa-solid fa-terminal" style="color: var(--primary);"></i>
                 <h2 data-i18n="installTitle">AnyTLS Server Installation</h2>
@@ -264,10 +175,95 @@
             <p style="color: var(--text-muted); margin-bottom: 24px;" data-i18n="installDesc">
                 Run this one-click script on your server (Ubuntu/Debian/CentOS) to automatically deploy the AnyTLS backend directly from GitHub.
             </p>
-            
             <div class="code-block-wrapper">
                 <button class="copy-btn" onclick="copyCode()" id="copyBtn"><i class="fa-regular fa-copy"></i> Copy</button>
                 <pre><code id="scriptCode">bash <(curl -fsSL https://raw.githubusercontent.com/anytls/anytls/main/install.sh)</code></pre>
+            </div>
+        </div>
+
+        <!-- 2. Download Tab (Multi-Platform) -->
+        <div class="client-grid" id="section-download" style="display: none;">
+            
+            <!-- Windows/Desktop -->
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">Mihomo Party</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descMihomo">The ultimate graphical interface for Mihomo core. Cross-platform and elegant.</p>
+                <div class="platform-tags">
+                    <a href="#" class="btn-download"><i class="fa-brands fa-windows"></i> Win</a>
+                    <a href="#" class="btn-download mac"><i class="fa-brands fa-apple"></i> Mac</a>
+                    <a href="#" class="btn-download linux"><i class="fa-brands fa-linux"></i> Linux</a>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">Clash Verge Rev</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descVerge">Continuation of Clash Verge. Excellent UI and rule management.</p>
+                <div class="platform-tags">
+                    <a href="#" class="btn-download"><i class="fa-brands fa-windows"></i> Win</a>
+                    <a href="#" class="btn-download mac"><i class="fa-brands fa-apple"></i> Mac</a>
+                    <a href="#" class="btn-download linux"><i class="fa-brands fa-linux"></i> Linux</a>
+                </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">FlClash / Surfboard</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descAndroid">Top-tier clients for Android with native Material You design and AnyTLS support.</p>
+                <div class="platform-tags">
+                    <a href="#" class="btn-download android"><i class="fa-brands fa-android"></i> Android</a>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">Shadowrocket / Stash</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descIOS">Powerful iOS clients. Import Clash profiles seamlessly for full AnyTLS connectivity.</p>
+                <div class="platform-tags">
+                    <a href="#" class="btn-download ios"><i class="fa-brands fa-apple"></i> iOS / iPad</a>
+                </div>
+            </div>
+
+            <!-- Routers -->
+            <div class="client-card">
+                <h3 style="font-size: 1.25rem;">OpenClash</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="descRouter">OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.</p>
+                <div class="platform-tags">
+                    <a href="#" class="btn-download router"><i class="fa-solid fa-network-wired"></i> OpenWrt</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Tutorial Tab (Anthropomorphic/Emoji Guide) -->
+        <div class="content-section" id="section-tutorial">
+            <div class="section-header">
+                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+                <h2 data-i18n="tutTitle">How to Import Clash Subscription</h2>
+            </div>
+            
+            <div class="tutorial-steps">
+                <div class="step-item">
+                    <div class="step-art">
+                        (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 🔗
+                    </div>
+                    <div class="step-title" data-i18n="step1Title">Step 1: Get Your Subscription Link</div>
+                    <p style="color: var(--text-muted);" data-i18n="step1Desc">Log into your service provider's panel. Find the "Copy Clash Subscription" button and click it! The link will look something like this:</p>
+                    <div class="step-code">https://sub.justmyrelay.com/api/v1/client/subscribe?token=your_secret_token</div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-art">
+                        ʕ•ᴥ•ʔ 📋 ➔ 💻
+                    </div>
+                    <div class="step-title" data-i18n="step2Title">Step 2: Feed It to Your Client</div>
+                    <p style="color: var(--text-muted);" data-i18n="step2Desc">Open your downloaded client (like Mihomo Party). Go to <b>Profiles / Subscriptions</b>, click <b>Add</b>, and paste the URL you just copied. Tell it to fetch!</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-art">
+                        (🚀•̀ᴗ•́)و ̑̑ 🌐
+                    </div>
+                    <div class="step-title" data-i18n="step3Title">Step 3: Connect and Fly</div>
+                    <p style="color: var(--text-muted);" data-i18n="step3Desc">Hit the "Update" button to download the latest nodes. Finally, toggle the main switch to <b>ON</b>. Congratulations, you are now surfing securely with AnyTLS!</p>
+                </div>
             </div>
         </div>
     </main>
@@ -281,28 +277,27 @@
         </div>
     </footer>
 
-    <!-- Logic Script (Can be moved to app.js) -->
     <script>
         // 1. Tab Switching Logic
         function switchTab(tabId) {
-            // Update Nav Active State
             document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
             document.getElementById(`tab-${tabId}`).classList.add('active');
 
-            // Toggle Sections
+            document.getElementById('section-install').style.display = 'none';
             document.getElementById('section-download').style.display = 'none';
             document.getElementById('section-tutorial').style.display = 'none';
-            document.getElementById('section-install').style.display = 'none';
 
-            if(tabId === 'download') document.getElementById('section-download').style.display = 'grid';
-            else document.getElementById(`section-${tabId}`).style.display = 'block';
+            if(tabId === 'download') {
+                document.getElementById('section-download').style.display = 'grid';
+            } else {
+                document.getElementById(`section-${tabId}`).style.display = 'block';
+            }
         }
 
         // 2. Theme Switching Logic
         function toggleTheme() {
             const html = document.documentElement;
             const icon = document.querySelector('#themeToggle i');
-            
             if (html.getAttribute('data-theme') === 'dark') {
                 html.setAttribute('data-theme', 'light');
                 icon.classList.remove('fa-moon');
@@ -320,98 +315,62 @@
             const btn = document.getElementById('copyBtn');
             navigator.clipboard.writeText(code).then(() => {
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
-                }, 2000);
+                setTimeout(() => { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000);
             });
         }
 
-        // 4. i18n Multi-Language Logic
+        // 4. i18n Logic
         const translations = {
             en: {
-                navDownload: "Download", navTutorial: "Tutorial", navInstall: "Install",
+                navInstall: "Install", navDownload: "Download", navTutorial: "Tutorial",
                 heroTitle: "AnyTLS Download Hub",
-                heroDesc: "Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps for Mihomo and sing-box cores.",
+                heroDesc: "Download the best free and open-source clients supporting the AnyTLS proxy protocol. Get secure apps across all devices.",
                 installTitle: "AnyTLS Server Installation",
                 installDesc: "Run this one-click script on your server (Ubuntu/Debian/CentOS) to automatically deploy the AnyTLS backend directly from GitHub.",
-                tutTitle: "Quick Start Guide", tutDesc: "Tutorial content will be populated here.",
-                cardDesc: "The ultimate graphical interface for Mihomo core. Cross-platform and elegant."
+                descMihomo: "The ultimate graphical interface for Mihomo core. Cross-platform and elegant.",
+                descVerge: "Continuation of Clash Verge. Excellent UI and rule management.",
+                descAndroid: "Top-tier clients for Android with native Material You design and AnyTLS support.",
+                descIOS: "Powerful iOS clients. Import Clash profiles seamlessly for full AnyTLS connectivity.",
+                descRouter: "OpenWrt router plugin. Bring AnyTLS proxy capability to your entire home network.",
+                tutTitle: "How to Import Clash Subscription",
+                step1Title: "Step 1: Get Your Subscription Link",
+                step1Desc: "Log into your service provider's panel. Find the \"Copy Clash Subscription\" button and click it! The link will look something like this:",
+                step2Title: "Step 2: Feed It to Your Client",
+                step2Desc: "Open your downloaded client (like Mihomo Party). Go to Profiles / Subscriptions, click Add, and paste the URL you just copied. Tell it to fetch!",
+                step3Title: "Step 3: Connect and Fly",
+                step3Desc: "Hit the \"Update\" button to download the latest nodes. Finally, toggle the main switch to ON. Congratulations, you are now surfing securely with AnyTLS!"
             },
             zh: {
-                navDownload: "下载中心", navTutorial: "使用教程", navInstall: "一键安装",
+                navInstall: "一键安装", navDownload: "下载中心", navTutorial: "使用教程",
                 heroTitle: "AnyTLS 客户端下载",
-                heroDesc: "下载支持 AnyTLS 代理协议的最佳免费开源客户端。获取适用于 Mihomo 与 sing-box 核心的安全应用。",
+                heroDesc: "下载支持 AnyTLS 代理协议的最佳免费开源客户端。获取全平台设备的安全应用。",
                 installTitle: "AnyTLS 服务端一键部署",
                 installDesc: "在您的服务器（Ubuntu/Debian/CentOS）上运行此一键脚本，即可从 GitHub 自动部署 AnyTLS 后端。",
-                tutTitle: "快速入门指南", tutDesc: "教程内容将在此处显示。",
-                cardDesc: "Mihomo 核心的终极图形界面。跨平台且优雅。"
-            },
-            es: {
-                navDownload: "Descargar", navTutorial: "Tutorial", navInstall: "Instalar",
-                heroTitle: "Centro de Descargas AnyTLS",
-                heroDesc: "Descargue los mejores clientes gratuitos y de código abierto para el protocolo proxy AnyTLS.",
-                installTitle: "Instalación del Servidor AnyTLS",
-                installDesc: "Ejecute este script en su servidor para implementar automáticamente el backend de AnyTLS.",
-                tutTitle: "Guía de Inicio Rápido", tutDesc: "El contenido del tutorial se mostrará aquí.",
-                cardDesc: "La interfaz gráfica definitiva para el núcleo Mihomo. Multiplataforma y elegante."
-            },
-            fr: {
-                navDownload: "Télécharger", navTutorial: "Tutoriel", navInstall: "Installer",
-                heroTitle: "Centre de Téléchargement AnyTLS",
-                heroDesc: "Téléchargez les meilleurs clients gratuits et open-source supportant le protocole proxy AnyTLS.",
-                installTitle: "Installation du Serveur AnyTLS",
-                installDesc: "Exécutez ce script sur votre serveur pour déployer automatiquement le backend AnyTLS.",
-                tutTitle: "Guide de Démarrage", tutDesc: "Le contenu du tutoriel sera affiché ici.",
-                cardDesc: "L'interface graphique ultime pour le noyau Mihomo. Multiplateforme et élégant."
-            },
-            de: {
-                navDownload: "Herunterladen", navTutorial: "Anleitung", navInstall: "Installieren",
-                heroTitle: "AnyTLS Download-Hub",
-                heroDesc: "Laden Sie die besten kostenlosen und Open-Source-Clients für das AnyTLS-Proxy-Protokoll herunter.",
-                installTitle: "AnyTLS Server-Installation",
-                installDesc: "Führen Sie dieses Skript auf Ihrem Server aus, um das AnyTLS-Backend automatisch bereitzustellen.",
-                tutTitle: "Schnellstartanleitung", tutDesc: "Der Tutorial-Inhalt wird hier angezeigt.",
-                cardDesc: "Die ultimative grafische Oberfläche für den Mihomo-Core. Plattformübergreifend und elegant."
-            },
-            pt: {
-                navDownload: "Baixar", navTutorial: "Tutorial", navInstall: "Instalar",
-                heroTitle: "Hub de Download AnyTLS",
-                heroDesc: "Baixe os melhores clientes gratuitos e de código aberto compatíveis com o protocolo proxy AnyTLS.",
-                installTitle: "Instalação do Servidor AnyTLS",
-                installDesc: "Execute este script no seu servidor para implantar automaticamente o backend do AnyTLS.",
-                tutTitle: "Guia de Início Rápido", tutDesc: "O conteúdo do tutorial será preenchido aqui.",
-                cardDesc: "A interface gráfica definitiva para o núcleo Mihomo. Multiplataforma e elegante."
-            },
-            ru: {
-                navDownload: "Скачать", navTutorial: "Руководство", navInstall: "Установить",
-                heroTitle: "Центр Загрузок AnyTLS",
-                heroDesc: "Скачайте лучшие бесплатные клиенты с открытым исходным кодом, поддерживающие протокол AnyTLS.",
-                installTitle: "Установка Сервера AnyTLS",
-                installDesc: "Запустите этот скрипт на своем сервере для автоматического развертывания бэкенда AnyTLS.",
-                tutTitle: "Краткое руководство", tutDesc: "Здесь будет содержание руководства.",
-                cardDesc: "Лучший графический интерфейс для ядра Mihomo. Кроссплатформенный и элегантный."
-            },
-            la: {
-                navDownload: "Descarcare", navTutorial: "Tutela", navInstall: "Installare",
-                heroTitle: "AnyTLS Centrum",
-                heroDesc: "Optimos clientes liberos et aperti fontis pro AnyTLS protocollo extrahe.",
-                installTitle: "AnyTLS Serviens Installatio",
-                installDesc: "Curre hoc scriptum in servo tuo ut AnyTLS statim instruas.",
-                tutTitle: "Dux Celeris", tutDesc: "Materia tutelae hic ostendetur.",
-                cardDesc: "Facies graphica ultima pro Mihomo. Elegans et per omnia systemata operans."
+                descMihomo: "Mihomo 核心的终极图形界面。跨平台且优雅。",
+                descVerge: "Clash Verge 的正统延续。极其出色的 UI 和规则管理。",
+                descAndroid: "Android 顶配客户端，原生质感设计，全面支持 AnyTLS。",
+                descIOS: "强大的 iOS 客户端。无缝导入 Clash 配置以获得 AnyTLS 体验。",
+                descRouter: "OpenWrt 路由器插件。为整个家庭网络赋予 AnyTLS 代理能力。",
+                tutTitle: "如何导入 Clash 订阅",
+                step1Title: "第一步：获取你的专属订阅链接",
+                step1Desc: "登录你机场/服务商的面板后台。找到“复制 Clash 订阅”按钮并狠狠点击它！链接通常长这样：",
+                step2Title: "第二步：喂给你的客户端",
+                step2Desc: "打开你下载好的客户端（比如 Mihomo Party）。前往 配置 / 订阅 (Profiles)，点击 添加 (Add)，然后把刚刚的 URL 贴进去，让它去抓取吧！",
+                step3Title: "第三步：连接并起飞",
+                step3Desc: "点击“更新”按钮下载最新的节点列表。最后，把主开关拨到 ON。恭喜你，现在正通过 AnyTLS 安全冲浪！"
             }
         };
 
         function changeLanguage(langCode) {
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
+            // Simplified fallback logic
+            const lang = translations[langCode] ? langCode : 'en'; 
+            document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[langCode] && translations[langCode][key]) {
-                    el.innerText = translations[langCode][key];
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key]; 
                 }
             });
-            // Update HTML lang attribute
-            document.documentElement.lang = langCode;
+            document.documentElement.lang = lang;
         }
     </script>
 </body>
